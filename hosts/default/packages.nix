@@ -6,18 +6,21 @@
 with pkgs;
 [
   # Applications
-  protonplus
-  lutris
-  dolphin-emu
-  prismlauncher
-  heroic
-  peazip
+#  protonplus
+#  lutris
+#  dolphin-emu
+#  prismlauncher
+#  heroic
+#  peazip
   nautilus
   file-roller
 
   # TUI
   btop
   yazi
+  atop
+  htop
+
 
   # Desktop
   hyprlock

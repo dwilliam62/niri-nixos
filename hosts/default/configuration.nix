@@ -10,7 +10,7 @@
     "${self}/system/xdg.nix"
     "${self}/system/environment.nix"
     "${self}/system/packages.nix"
-    "${self}/system/filesystems.nix"
+    #"${self}/system/filesystems.nix"
     inputs.home-manager.nixosModules.default
   ];
 
@@ -25,9 +25,9 @@
 
   users.groups.i2c = {}; # ✅ Ensure group exists
 
-  users.users.lysec = {
+  users.users.dwilliams = {
     isNormalUser = true;
-    description = "lysec";
+    description = "Don Williams";
     shell = pkgs.zsh;
     extraGroups = [
       "networkmanager"
@@ -44,7 +44,7 @@
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs; };
     users = {
-      "lysec" = import ./home.nix;
+      "dwilliams" = import ./home.nix;
     };
   };
 
@@ -67,7 +67,7 @@
     loader.efi.canTouchEfiVariables = true;
     kernelPackages = pkgs.linuxPackages_cachyos;
     kernelParams = [
-      "video=DP-1:2560x1440@360"
+      "video=Virtual-1,1920x1080@60"
     ];
     kernelModules = [ "v4l2loopback" "i2c-dev" ];
     initrd.availableKernelModules = [ "i2c-dev" ]; # ✅ Load early in initrd
@@ -80,6 +80,11 @@
   };
 
   services.udev.packages = [ pkgs.rwedid ]; # ✅ Enable I2C udev rules
+  services.rpcbind.enable = true; 
+  services.nfs.server.enable = true; 
+  security.sudo.wheelNeedsPassword = false;
+  services.flatpak.enable = true; 
+  services.openssh.enable = true;
 
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
@@ -97,7 +102,7 @@
     networkmanager.enable = true;
   };
 
-  time.timeZone = "Europe/Berlin";
+  time.timeZone = "America/New_York";
 
   i18n = {
     defaultLocale = "en_US.UTF-8";
@@ -119,9 +124,9 @@
   services = {
     xserver = {
       enable = true;
-      videoDrivers = [ "amdgpu" ];
+      videoDrivers = [ "intel" ];
       xkb = {
-        layout = "de";
+        layout = "us";
         variant = "";
       };
     };
@@ -147,7 +152,7 @@
     };
   };
 
-  console.keyMap = "de";
+  console.keyMap = "us";
 
   xdg.portal.enable = true;
 

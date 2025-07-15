@@ -40,7 +40,7 @@
       };
 
       input = {
-        keyboard.xkb.layout = "de";
+        keyboard.xkb.layout = "us";
         touchpad = {
           click-method = "button-areas";
           dwt = true;
@@ -57,11 +57,11 @@
       };
 
       outputs = {
-        "DP-1" = {
+        "Virtual-1" = {
           mode = {
-            width = 2560;
-            height = 1440;
-            refresh = 359.97900;
+            width = 1920;
+            height = 1080;
+            refresh = 60.0;
           };
           scale = 1.0;
           position = { x = 0; y = 0; };

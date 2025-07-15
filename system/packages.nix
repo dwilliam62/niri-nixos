@@ -7,8 +7,39 @@
 
 {
   environment.systemPackages = with pkgs; [
+    virt-viewer
+    luarocks
+    lunarvim
+    ugrep
+    ripgrep
+    atop
+    btop
+    htop
+    bottom
+    cava
+    curl
     wget
     unzip
+    gcc
+    gnumake
+    dua
+    duf
+    dysk
+    eza
+    fastfetch
+    nitch
+    fzf
+    fd
+    findutils
+    ghostty
+    kitty
+    iotop
+    inxi
+    lazygit
+    lshw
+    google-chrome
+    wezterm
+    lsd
     git
     pavucontrol
     pulseaudio

@@ -2,7 +2,7 @@
 {
   hardware.steam-hardware.enable = true;
   programs.steam = {
-    enable = true;
+    enable = false;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
@@ -17,23 +17,23 @@
 
   # Add system packages for VR support
   environment.systemPackages = with pkgs; [
-    openvr # Required for SteamVR
+    #openvr # Required for SteamVR
     libusb1 # Used for VR devices
     usbutils
     pkgs.libsndfile
     pkgs.xwayland
-    gamescope
+    #gamescope
   ];
 
   # Udev rules for VR devices
   services.udev.packages = with pkgs; [
-    openvr
+    #openvr
   ];
 
   services.udev.extraRules = ''
     # HTC Vive
-    SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="2c87", MODE="0666", GROUP="plugdev"
-    SUBSYSTEM=="usb", ATTR{idVendor}=="28de", ATTR{idProduct}=="2101", MODE="0666", GROUP="plugdev"
-    SUBSYSTEM=="usb", ATTR{idVendor}=="28de", ATTR{idProduct}=="2000", MODE="0666", GROUP="plugdev"
+    #SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="2c87", MODE="0666", GROUP="plugdev"
+    #SUBSYSTEM=="usb", ATTR{idVendor}=="28de", ATTR{idProduct}=="2101", MODE="0666", GROUP="plugdev"
+    #SUBSYSTEM=="usb", ATTR{idVendor}=="28de", ATTR{idProduct}=="2000", MODE="0666", GROUP="plugdev"
   '';
 }
