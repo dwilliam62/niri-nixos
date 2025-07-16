@@ -32,6 +32,7 @@
     fd
     findutils
     ffmpeg
+    gemini-cli
     ghostty
     git
     gnome-themes-extra
