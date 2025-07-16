@@ -7,6 +7,9 @@
 
 {
   environment.systemPackages = with pkgs; [
+
+    inputs.wfetch.packages.${pkgs.system}.default #custom fetch for nixos
+
     adwaita-icon-theme
     atop
     arrpc
