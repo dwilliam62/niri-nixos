@@ -8,7 +8,7 @@ let
     MAX=100
     OSD_FILE="/tmp/brightness_osd_level"
 
-    current=$(ddcutil --bus=$BUS getvcp 10 | grep -oP "current value\\s*=\\s*\\K[0-9]+")
+    current=$(ddcutil --bus=$BUS getvcp 10 | grep -oP "current value\s*=\s*\K[0-9]+")
     new=$current
 
     if [[ "$1" == "up" ]]; then
@@ -24,9 +24,11 @@ let
     ddcutil --bus=$BUS setvcp 10 "$new"
     echo "$new" > "$OSD_FILE"
   '';
+  wfScript = import ./wf.nix { inherit pkgs; };
 in
 {
   home.packages = [
     brightnessScript
+    wfScript
   ];
 }
