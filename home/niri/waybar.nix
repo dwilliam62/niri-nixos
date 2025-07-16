@@ -28,7 +28,7 @@ let
 
     modules-left = ["custom/menu" "tray"];
     modules-center = ["clock"];
-    modules-right = ["pulseaudio" "battery"];
+    modules-right = ["idle_inhibitor" "cpu" "memory" "pulseaudio" "battery"];
 
     "clock" = {
       format = " {:%H:%M}";
@@ -59,6 +59,22 @@ let
       format = "";
       on-click = "walker";
     };
+    "cpu" = {
+      format = " {load}%";
+      tooltip = true;
+    };
+    "memory" = {
+      format = " {}%";
+      tooltip = true;
+      tooltip-format = "Memory: {used:0.1f}GB/{total:0.1f}GB";
+    };
+    "idle_inhibitor" = {
+      format = "{icon}";
+      format-icons = {
+        activated = "";
+        deactivated = "";
+      };
+    };
   };
 
   # Waybar stylesheet
@@ -88,7 +104,10 @@ let
     #tray,
     #pulseaudio,
     #battery,
-    #custom-menu {
+    #custom-menu,
+    #cpu,
+    #memory,
+    #idle_inhibitor {
       background: transparent;
       padding: 0 15px;
       margin: 0 2px;
@@ -98,6 +117,9 @@ let
     #pulseaudio { color: #${base0D}; }
     #battery { color: #${base08}; }
     #custom-menu { color: #${base0E}; }
+    #cpu { color: #${base0A}; }
+    #memory { color: #${base0C}; }
+    #idle_inhibitor { color: #${base05}; }
   '';
 in
 {
