@@ -21,6 +21,7 @@ in {
     "super+Return".action = spawn apps.terminal;
     "super+Control+Return".action = spawn apps.editor;
     "super+E".action = spawn apps.fileManager;
+    "super+space".action = spawn "walker";
 
     "super+a".action = toggle-overview;
     "super+f".action = fullscreen-window;
