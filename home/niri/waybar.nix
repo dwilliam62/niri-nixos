@@ -21,7 +21,7 @@ let
   base0F = "E6B673";
 
   # Waybar settings in JSON format
-  settingsFormat = pkgs.lib.generators.toJSON {} [{
+  settingsFormat = pkgs.lib.generators.toJSON {} {
     layer = "top";
     position = "top";
 
@@ -65,7 +65,7 @@ let
       format = "";
       on-click = "walker";
     };
-  }];
+  };
 
   # Waybar stylesheet
   stylesheet = ''
@@ -129,10 +129,10 @@ let
   '';
 in
 {
-  # Use home.file to create the configuration files directly
-  home.file.".config/waybar-niri/config".text = settingsFormat;
-  home.file.".config/waybar-niri/style.css".text = stylesheet;
+  # Use home.file to create the configuration files directly in the desired location
+  home.file.".config/niri/waybar/config".text = settingsFormat;
+  home.file.".config/niri/waybar/style.css".text = stylesheet;
 
-  # Add waybar to home packages
+  # Add waybar to home packages so it's available to be run
   home.packages = [ pkgs.waybar ];
 }
