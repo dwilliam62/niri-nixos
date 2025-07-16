@@ -157,197 +157,97 @@ in
       style = concatStrings [
         ''
           * {
-            font-size: 16px;
+            font-size: 18px;
             font-family: JetBrainsMono Nerd Font, Font Awesome, sans-serif;
             font-weight: bold;
           }
+
           window#waybar {
-            /*
-
-              background-color: rgba(26,27,38,0);
-              border-bottom: 1px solid rgba(26,27,38,0);
-              border-radius: 0px;
-              color: #${base0F};
-            */
-
-            background-color: rgba(26,27,38,0);
-            border-bottom: 1px solid rgba(26,27,38,0);
-            border-radius: 0px;
+            background-color: rgba(19, 23, 33, 0.8);
+            border-radius: 10px;
             color: #${base0F};
+            margin: 10px 10px 0 10px;
           }
+
           #workspaces {
-            /*
-              Eternal
-              background: linear-gradient(180deg, #${base00}, #${base01});
-              margin: 5px 5px 5px 0px;
-              padding: 0px 10px;
-              border-radius: 0px 15px 15px 0px;
-              border: 0px;
-              font-style: normal;
-              color: #${base00};
-            */
-            background: linear-gradient(45deg, #${base01}, #${base01});
-            margin: 5px;
-            padding: 0px 1px;
-            border-radius: 15px;
-            border: 0px;
-            font-style: normal;
-            color: #${base00};
+            background: transparent;
+            margin: 0 5px;
+            padding: 0 5px;
           }
+
           #workspaces button {
             padding: 0px 5px;
             margin: 4px 3px;
-            border-radius: 15px;
-            border: 0px;
+            border-radius: 10px;
             color: #${base00};
             background: linear-gradient(45deg, #${base0D}, #${base0E});
             opacity: 0.5;
             transition: all 0.3s ease-in-out;
           }
+
           #workspaces button.active {
-            padding: 0px 5px;
-            margin: 4px 3px;
-            border-radius: 15px;
-            border: 0px;
-            color: #${base00};
-            background: linear-gradient(45deg, #${base0D}, #${base0E});
             opacity: 1.0;
             min-width: 40px;
-            transition: all 0.3s ease-in-out;
           }
+
           #workspaces button:hover {
-            border-radius: 15px;
-            color: #${base00};
-            background: linear-gradient(45deg, #${base0D}, #${base0E});
             opacity: 0.8;
           }
+
           tooltip {
             background: #${base00};
             border: 1px solid #${base0E};
             border-radius: 10px;
           }
+
           tooltip label {
             color: #${base07};
           }
-          #window {
-            /*
-              Eternal
-              color: #${base05};
-              background: #${base00};
-              border-radius: 15px;
-              margin: 5px;
-              padding: 2px 20px;
-            */
-            margin: 5px;
-            padding: 2px 20px;
-            color: #${base05};
-            background: #${base01};
-            border-radius: 15px 15px 15px 15px;
-          }
-          #memory {
+
+          /* Reset individual module styles */
+          #window,
+          #memory,
+          #clock,
+          #idle_inhibitor,
+          #cpu,
+          #disk,
+          #battery,
+          #network,
+          #tray,
+          #pulseaudio,
+          #custom-notification,
+          #custom-startmenu,
+          #custom-exit {
             color: #${base0F};
-            /*
-              Eternal
-              background: #${base00};
-              border-radius: 15px 15px 15px 15px;
-              margin: 5px;
-              padding: 2px 20px;
-            */
-            background: #${base01};
-            margin: 5px;
-            padding: 2px 20px;
-            border-radius: 15px 15px 15px 15px;
+            background: transparent;
+            border-radius: 0;
+            margin: 0;
+            padding: 0 15px;
           }
+
           #clock {
             color: #${base0B};
-              background: #${base00};
-              border-radius: 15px 15px 15px 15px;
-              margin: 5px;
-              padding: 2px 20px;
-          }
-          #idle_inhibitor {
-            color: #${base0A};
-              background: #${base00};
-              border-radius: 15px 15px 15px 15px;
-              margin: 3px;
-              padding: 2px 20px;
-          }
-          #cpu {
-            color: #${base07};
-              background: #${base00};
-              border-radius: 15px 15px 15px 15px;
-              margin: 5px;
-              padding: 2px 20px;
-          }
-          #disk {
-            color: #${base0F};
-              background: #${base00};
-              border-radius: 15px 15px 15px 15px;
-              margin: 5px;
-              padding: 2px 20px;
-          }
-          #battery {
-            color: #${base08};
-            background: #${base00};
-            border-radius: 15px 15px 15px 15px;
-            margin: 5px;
-            padding: 2px 20px;
-          }
-          #network {
-            color: #${base09};
-            background: #${base00};
-            border-radius: 15px 15px 15px 15px;
-            margin: 5px;
-            padding: 2px 20px;
-          }
-          #tray {
-            color: #${base05};
-            background: #${base00};
-            border-radius: 15px 15px 15px 15px;
-            margin: 5px;
-            padding: 2px 15px;
           }
           #pulseaudio {
             color: #${base0D};
-            /*
-              Eternal
-              background: #${base00};
-              border-radius: 15px 15px 15px 15px;
-              margin: 5px;
-              padding: 2px 20px;
-            */
-            background: #${base01};
-            margin: 4px;
-            padding: 2px 20px;
-            border-radius: 15px 15px 15px 15px;
           }
           #custom-notification {
             color: #${base0C};
-            background: #${base00};
-            border-radius: 15px 15px 15px 15px;
-            margin: 5px;
-            padding: 2px 20px;
           }
           #custom-startmenu {
             color: #${base0E};
-            background: #${base00};
-            border-radius: 0px 15px 15px 0px;
-            margin: 5px 5px 5px 0px;
-            padding: 2px 20px;
-          }
-          #idle_inhibitor {
-            color: #${base09};
-            background: #${base00};
-            border-radius: 15px 15px 15px 15px;
-            margin: 5px;
-            padding: 2px 20px;
           }
           #custom-exit {
             color: #${base0E};
-            background: #${base00};
-            border-radius: 15px 0px 0px 15px;
-            margin: 5px 0px 5px 5px;
-            padding: 2px 20px;
+          }
+          #battery {
+            color: #${base08};
+          }
+          #network {
+            color: #${base09};
+          }
+          #idle_inhibitor {
+            color: #${base0A};
           }
         ''
       ];
