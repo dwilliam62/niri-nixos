@@ -20,6 +20,8 @@
     htop
     gcc
     gnumake
+    discord
+    discordcanary
     dua
     duf
     dysk

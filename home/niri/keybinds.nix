@@ -29,7 +29,6 @@ in {
     "control+shift+1".action = screenshot;
     "control+shift+2".action = screenshot-window { write-to-disk = true; };
 
-
     "super+Left".action = focus-column-left;
     "super+Right".action = focus-column-right;
     "super+Down".action = focus-workspace-down;
