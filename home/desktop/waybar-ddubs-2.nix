@@ -164,9 +164,9 @@ in
 
           window#waybar {
             background-color: rgba(19, 23, 33, 0.8);
-            border-radius: 10px;
+            border-radius: 15px;
             color: #${base0F};
-            margin: 10px 10px 0 10px;
+            margin: 20px 10% 0 10%;
           }
 
           #workspaces {
