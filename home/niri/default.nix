@@ -13,5 +13,6 @@
     ./rules.nix
     ./autostart.nix
     ./scripts.nix
+    ../../home/desktop/waybar-ddubs-2.nix
   ];
 }
