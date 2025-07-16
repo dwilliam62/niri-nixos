@@ -116,33 +116,7 @@ Scope {
                 }
             }
             
-            // Clock widget shadow
-            Rectangle {
-                id: clockShadow
-                visible: clockWidget !== null
-                x: clockWidget.x
-                y: clockWidget.y
-                width: clockWidget.width
-                height: clockWidget.height
-                color: "black"
-                topLeftRadius: 0
-                topRightRadius: clockWidget.height / 2
-                bottomLeftRadius: 0
-                bottomRightRadius: 0
-                z: -10  // Behind border
-                
-                layer.enabled: true
-                layer.effect: DropShadow {
-                    transparentBorder: true
-                    horizontalOffset: 1
-                    verticalOffset: -1
-                    radius: 8
-                    samples: 17
-                    color: Qt.rgba(0, 0, 0, 0.3)
-                    cached: true
-                    spread: 0.1
-                }
-            }
+            
 
             // Border background with shadow
             Border {
@@ -150,7 +124,6 @@ Scope {
                 anchors.fill: parent
                 workspaceIndicator: workspaceIndicator
                 volumeOSD: volumeOsd
-                clockWidget: clockWidget
                 z: -5  // Behind UI elements to prevent shadow from covering control panel
             }
 
@@ -254,17 +227,7 @@ Scope {
                 }
             }
 
-            // Clock at bottom-left corner
-            Widgets.Clock {
-                id: clockWidget
-                anchors {
-                    bottom: parent.bottom
-                    left: parent.left
-                    bottomMargin: Data.Settings.borderWidth
-                    leftMargin: Data.Settings.borderWidth
-                }
-                z: 10
-            }
+            
 
             // Notification popups (primary screen only)
             Notifications.Notification {
