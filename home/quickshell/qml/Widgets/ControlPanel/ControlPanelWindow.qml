@@ -25,10 +25,10 @@ PanelWindow {
     signal performanceActionRequested(string action)
     
     screen: Quickshell.primaryScreen || Quickshell.screens[0]
-    anchors.top: true
+    anchors.bottom: true
     anchors.left: true
     anchors.right: true
-    margins.bottom: 0
+    margins.top: 0
     margins.left: (screen ? screen.width / 2 - 400 : 0)  // Centered
     margins.right: (screen ? screen.width / 2 - 400 : 0)
     implicitWidth: 640
@@ -47,10 +47,10 @@ PanelWindow {
     WlrLayershell.namespace: "quickshell-controlpanel"
     WlrLayershell.keyboardFocus: (panelContent && panelContent.textInputFocused) ? WlrKeyboardFocus.Exclusive : WlrKeyboardFocus.OnDemand
     
-    // Hover trigger area at screen top
+    // Hover trigger area at screen bottom
     MouseArea {
         id: triggerMouseArea
-        anchors.top: parent.top
+        anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
         width: 600
         height: 8
@@ -69,8 +69,8 @@ PanelWindow {
         width: 600
         height: 380
         
-        anchors.top: parent.top
-        anchors.topMargin: 8  // Trigger area space
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 8  // Trigger area space
         anchors.horizontalCenter: parent.horizontalCenter
         visible: isShown
         opacity: isShown ? 1.0 : 0.0
@@ -111,11 +111,11 @@ PanelWindow {
     // Border integration corners (positioned to match panel edges)
     Core.Corners {
         id: controlPanelLeftCorner
-        position: "bottomright"
+        position: "topright"
         size: 1.3
         fillColor: Data.ThemeManager.bgColor
         offsetX: -661
-        offsetY: -313
+        offsetY: 313
         visible: isShown
         z: 1  // Higher z-index to render above shadow effects
         
@@ -126,14 +126,15 @@ PanelWindow {
 
     Core.Corners {
         id: controlPanelRightCorner
-        position: "bottomleft"
+        position: "topleft"
         size: 1.3
         fillColor: Data.ThemeManager.bgColor
         offsetX: 661
-        offsetY: -313
+        offsetY: 313
         visible: isShown
         z: 1  // Higher z-index to render above shadow effects
         
+        // Disable implicit animations to prevent corner sliding
         Behavior on x { enabled: false }
         Behavior on y { enabled: false }
     }
@@ -168,4 +169,5 @@ PanelWindow {
             })
         }
     }
-} 
+}
+ 

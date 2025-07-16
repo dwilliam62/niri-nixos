@@ -271,10 +271,10 @@ Scope {
                 id: notificationPopup
                 visible: (modelData === (Quickshell.primaryScreen || Quickshell.screens[0])) && calculatedHeight > 20
                 anchors {
-                    top: parent.top
+                    bottom: parent.bottom
                     right: parent.right
                     rightMargin: Data.Settings.borderWidth + 20
-                    topMargin: 0
+                    bottomMargin: 0
                 }
                 width: 420
                 height: calculatedHeight
