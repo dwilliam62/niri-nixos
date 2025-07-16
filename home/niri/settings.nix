@@ -35,13 +35,13 @@
           };
         };
 
-        gaps = 10;
+        gaps = 15;
 
         struts = {
-          left = 20;
+          left = 40;
           right = 20;
           top = 20;
-          bottom = 20;
+          bottom = 40;
         };
       };
 
@@ -75,7 +75,7 @@
       };
 
       cursor = {
-        size = 20;
+        size = 22;
         theme = "Adwaita";
       };
 
