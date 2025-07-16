@@ -21,7 +21,7 @@
     gcc
     gnumake
     discord
-    discordcanary
+    discord-canary
     dua
     duf
     dysk
