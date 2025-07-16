@@ -1,4 +1,5 @@
-{pkgs}:
+{pkgs, ...}:
+
 pkgs.writeShellScriptBin "wf" ''
   # Wfetch Randomizer
   # Choose between multiple command options randomly

@@ -10,7 +10,7 @@
     ./keybinds.nix
     ./rules.nix
     ./autostart.nix
-    ./scripts/wf.nix
+    #./scripts/wf.nix
     ./waybar.nix
   ];
 }
