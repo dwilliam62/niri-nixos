@@ -31,9 +31,9 @@ in
           layer = "top";
           position = "top";
 
-          modules-left = ["custom/startmenu", "sway/workspaces", "sway/window", "tray"];
+          modules-left = ["custom/startmenu" "sway/workspaces" "sway/window" "tray"];
           modules-center = ["clock"];
-          modules-right = ["idle_inhibitor", "pulseaudio", "battery", "custom/exit"];
+          modules-right = ["idle_inhibitor" "pulseaudio" "battery" "custom/exit"];
 
           "sway/workspaces" = {
             format = "{name}";
