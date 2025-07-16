@@ -31,19 +31,17 @@ in
           layer = "top";
           position = "top";
 
-          modules-left = ["custom/startmenu" "tray"];
+          modules-left = ["custom/startmenu", "sway/workspaces", "sway/window", "tray"];
           modules-center = ["clock"];
-          modules-right = ["idle_inhibitor" "pulseaudio" "battery" "custom/exit"];
+          modules-right = ["idle_inhibitor", "pulseaudio", "battery", "custom/exit"];
 
-          "hyprland/workspaces" = {
+          "sway/workspaces" = {
             format = "{name}";
             format-icons = {
               default = " ";
               active = " ";
               urgent = " ";
             };
-            on-scroll-up = "hyprctl dispatch workspace e+1";
-            on-scroll-down = "hyprctl dispatch workspace e-1";
           };
           "clock" = {
             format = '' {:%H:%M}'';
@@ -53,7 +51,7 @@ in
             tooltip = true;
             tooltip-format = "<big>{:%A, %d.%B %Y }</big><tt><small>{calendar}</small></tt>";
           };
-          "hyprland/window" = {
+          "sway/window" = {
             max-length = 60;
             separate-outputs = false;
           };
@@ -113,7 +111,7 @@ in
             tooltip = false;
             format = " ";
             # exec = "rofi -show drun";
-            on-click = "rofi -show drun";
+            on-click = "walker";
           };
           "idle_inhibitor" = {
             format = "{icon}";
