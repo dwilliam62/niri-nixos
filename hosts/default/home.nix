@@ -30,6 +30,13 @@ in
     ../../home/programs/obs.nix
     ../../home/programs/vesktop.nix
     ../../home/programs/firefox.nix
+    ../../home/programs/eza.nix
+    ../../home/programs/bat.nix
+    ../../home/programs/bottom.nix
+    ../../home/programs/cava.nix
+    ../../home/programs/fzf.nix
+    ../../home/programs/tmux.nix
+    ../../home/programs/evil-helix.nix
 
     ../../system/shell/zsh.nix
 

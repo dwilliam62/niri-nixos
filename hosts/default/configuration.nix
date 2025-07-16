@@ -98,7 +98,7 @@
   };
 
   networking = {
-    hostName = "nixos";
+    hostName = "niri-nixos";
     networkmanager.enable = true;
   };
 

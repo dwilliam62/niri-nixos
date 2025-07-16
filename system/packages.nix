@@ -7,19 +7,17 @@
 
 {
   environment.systemPackages = with pkgs; [
-    virt-viewer
-    luarocks
-    lunarvim
-    ugrep
-    ripgrep
+    adwaita-icon-theme
     atop
+    arrpc
+    alvr
     btop
-    htop
+    base16-schemes
     bottom
     cava
     curl
-    wget
-    unzip
+    ddcutil
+    htop
     gcc
     gnumake
     dua
@@ -31,38 +29,40 @@
     fzf
     fd
     findutils
+    ffmpeg
     ghostty
-    kitty
+    git
+    gnome-themes-extra
+    google-chrome
     iotop
     inxi
+    kitty
     lazygit
     lshw
-    google-chrome
-    wezterm
-    lsd
-    git
-    pavucontrol
-    pulseaudio
-    waypaper
-    pywal16
-    pywalfox-native
-    arrpc
-    swww
-    swaybg
-    adwaita-icon-theme
-    gnome-themes-extra
-    nodePackages.prettier
-    xwayland
-    spicetify-cli
-    alvr
-    ffmpeg
-    mesa
     libva
     libva-utils
-    playerctl
     libayatana-appindicator
+    luarocks
+    lunarvim
+    lsd
+    mesa
     nh
-    base16-schemes
-    ddcutil
+    nodePackages.prettier
+    pavucontrol
+    pulseaudio
+    playerctl
+    pywal16
+    pywalfox-native
+    ripgrep
+    swww
+    swaybg
+    spicetify-cli
+    xwayland
+    waypaper
+    wezterm
+    wget
+    unzip
+    ugrep
+    virt-viewer
   ];
   }
