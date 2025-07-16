@@ -6,8 +6,9 @@
     package = pkgs.niri;
     settings = {
       workspaces = {
+        "CLI" = {};
         "browser" = {};
-        "vesktop" = {};
+        "discord" = {};
       };
 
       prefer-no-csd = true;
@@ -15,6 +16,11 @@
       hotkey-overlay = {
         skip-at-startup = true;
       };
+
+
+    overview  = {
+        zoom = 0.65;
+    };
 
       layout = {
 
@@ -29,7 +35,7 @@
           };
         };
 
-        gaps = 6;
+        gaps = 10;
 
         struts = {
           left = 20;
@@ -52,7 +58,7 @@
           middle-emulation = true;
           accel-profile = "adaptive";
         };
-        focus-follows-mouse.enable = true;
+        focus-follows-mouse.enable = false;
         warp-mouse-to-focus.enable = false;
       };
 

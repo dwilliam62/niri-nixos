@@ -22,6 +22,7 @@ in {
     "super+Control+Return".action = spawn apps.editor;
     "super+E".action = spawn apps.fileManager;
 
+    "super+a".action = toggle-overview;
     "super+f".action = fullscreen-window;
     "super+t".action = toggle-window-floating;
 
@@ -39,7 +40,12 @@ in {
     "super+Shift+Down".action = move-column-to-workspace-down;
     "super+Shift+Up".action = move-column-to-workspace-up;
 
-    "super+1".action = focus-workspace "browser";
-    "super+2".action = focus-workspace "vesktop";
+    "super+1".action = focus-workspace "cli";
+    "super+2".action = focus-workspace "browser";
+    "super+3".action = focus-workspace "discord";
+
+    "Mod+WheelScrollDown".action = focus-workspace-down;
+    "Mod+WheelScrollUp".action = focus-workspace-up;
+    
   };
 }
