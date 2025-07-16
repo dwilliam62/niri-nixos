@@ -5,7 +5,7 @@
     { command = ["systemctl" "--user" "start" "hyprpolkitagent"]; }
     { command = ["arrpc"]; }
     { command = ["xwayland-satellite"]; }
-    # { command = ["qs"]; }
+    { command = ["qs"]; }
     { command = ["waybar" "-c" "/home/dwilliams/.config/niri/waybar/config" "-s" "/home/dwilliams/.config/niri/waybar/style.css"]; }
     { command = ["waypaper" "--restore" ]; }
     { command = ["discordcanary"]; }

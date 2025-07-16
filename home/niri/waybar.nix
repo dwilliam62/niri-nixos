@@ -24,18 +24,12 @@ let
   settingsFormat = pkgs.lib.generators.toJSON {} {
     layer = "top";
     position = "top";
+    height = 30;
 
-    modules-left = ["sway/workspaces" "sway/window"];
+    modules-left = ["custom/menu" "tray"];
     modules-center = ["clock"];
-    modules-right = ["tray" "pulseaudio" "battery" "custom/menu"];
+    modules-right = ["pulseaudio" "battery"];
 
-    "sway/workspaces" = {
-      format = "{name}";
-    };
-    "sway/window" = {
-      max-length = 60;
-      separate-outputs = false;
-    };
     "clock" = {
       format = " {:%H:%M}";
       tooltip-format = "<big>{:%A, %d.%B %Y }</big><tt><small>{calendar}</small></tt>";
@@ -77,9 +71,7 @@ let
 
     window#waybar {
       background-color: rgba(19, 23, 33, 0.8);
-      border-radius: 15px;
       color: #${base0F};
-      margin: 20px 10% 0 10%;
     }
 
     tooltip {
@@ -92,26 +84,6 @@ let
       color: #${base07};
     }
 
-    #workspaces button {
-      padding: 0px 5px;
-      margin: 4px 3px;
-      border-radius: 10px;
-      color: #${base00};
-      background: linear-gradient(45deg, #${base0D}, #${base0E});
-      opacity: 0.5;
-      transition: all 0.3s ease-in-out;
-    }
-
-    #workspaces button.active {
-      opacity: 1.0;
-      min-width: 40px;
-    }
-
-    #workspaces button:hover {
-      opacity: 0.8;
-    }
-
-    #window,
     #clock,
     #tray,
     #pulseaudio,
