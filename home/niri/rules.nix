@@ -32,7 +32,7 @@
       # Vesktop with rounded corners
       {
         matches = [
-          { app-id = "discordcanary"; }
+          { app-id = "discord"; }
         ];
         open-on-workspace = "discord";
         geometry-corner-radius = {
