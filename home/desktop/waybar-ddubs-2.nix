@@ -220,7 +220,7 @@ in
           #custom-exit {
             color: #${base0F};
             background: transparent;
-            border-radius: 0;
+            border-radius: 0px;
             margin: 0;
             padding: 0 15px;
           }
