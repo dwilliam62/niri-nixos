@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 let
   brightnessScript = pkgs.writeShellScriptBin "brightness" ''
@@ -24,11 +24,9 @@ let
     ddcutil --bus=$BUS setvcp 10 "$new"
     echo "$new" > "$OSD_FILE"
   '';
-  wfScript = import ./wf.nix { inherit pkgs; };
+  wfScript = import ./scripts/wf.nix { inherit pkgs; };
 in
-{
-  home.packages = [
-    brightnessScript
-    wfScript
-  ];
-}
+[
+  brightnessScript
+  wfScript
+]

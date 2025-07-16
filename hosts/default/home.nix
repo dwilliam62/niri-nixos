@@ -8,6 +8,7 @@
 
 let
   allPackages = import ./packages.nix { inherit pkgs; };
+  niriScripts = import ../../home/niri/scripts.nix { inherit pkgs; };
 in
 {
   home.username = "dwilliams";
@@ -45,7 +46,7 @@ in
     inputs.nixvim.homeManagerModules.nixvim
   ];
 
-  home.packages = allPackages;
+  home.packages = allPackages ++ niriScripts;
 
   xdg.portal.enable = true;
 
