@@ -18,11 +18,9 @@
     base16-schemes
     bottom
     cava
+    clapgrep
     curl
     ddcutil
-    htop
-    gcc
-    gnumake
     discord
     discord-canary
     dua
@@ -30,7 +28,6 @@
     dysk
     eza
     fastfetch
-    nitch
     fzf
     fd
     findutils
@@ -40,6 +37,12 @@
     git
     gnome-themes-extra
     google-chrome
+    gcc
+    gitnuro #desktop gui for git
+    glab #gitlab cli toosl
+    gnumake
+    htop
+    hyfetch #includisve system fetch
     iotop
     inxi
     kitty
@@ -53,6 +56,7 @@
     lsd
     mesa
     nh
+    nitch
     nodePackages.prettier
     pavucontrol
     pulseaudio
