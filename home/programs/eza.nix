@@ -32,13 +32,12 @@
     dir = "exa -a --grid";
     jctl = "journalctl -p 3 -xb";
     notes = "nvim ~/notes.txt";
-    ncg = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
+    gcCleaner = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
     cat = "bat";
     man = "batman";
     dysk = "dysk -c label+default";
     rebuild = "nh os switch -H default";
     update = "nh os switch -H default --update";
     ncg = "nh clean all";
-    gcClean = "nh clean all";
   };
 }
