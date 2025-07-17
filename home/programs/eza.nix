@@ -38,5 +38,7 @@
     dysk = "dysk -c label+default";
     rebuild = "nh os switch -H default";
     update = "nh os switch -H default --update";
+    ncg = "nh clean all";
+    gcClean = "nh clean all";
   };
 }
