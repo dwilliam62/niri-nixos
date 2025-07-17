@@ -8,23 +8,7 @@
       {
         matches = [
           {
-            namespace = "swww-daemon";
-          }
-        ];
-        place-within-backdrop = true;
-      }
-      {
-        matches = [
-          {
-            namespace = "quickshell-wallpaper";
-          }
-        ];
-        place-within-backdrop = true;
-      }
-      {
-        matches = [
-          {
-            namespace = "wallpaper";
+            namespace = "^swww-daemon$";
           }
         ];
         place-within-backdrop = true;
