@@ -21,7 +21,6 @@
     overview  = {
         zoom = 0.65;
         workspace-shadow = {
-          enable = false; 
         };
      };
 

@@ -16,10 +16,10 @@
       {
         matches = [
           {
-            namespace = "waypaper";
+            namespace = "quickshell-wallpaper";
           }
         ];
-        layer = "quickshell-wallpaper";
+        layer = "background";
         overview = "show";
       }
     ];
