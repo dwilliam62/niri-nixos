@@ -13,6 +13,15 @@
         ];
         place-within-backdrop = true;
       }
+      {
+        matches = [
+          {
+            namespace = "waypaper";
+          }
+        ];
+        layer = "background";
+        overview = "show";
+      }
     ];
     window-rules = [
       {
