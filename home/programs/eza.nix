@@ -23,7 +23,7 @@
     sv = "sudo nvim";
     v = "nvim";
     c = "clear";
-    ls = "eza";
+    ls = "eza -a";
     lt = "eza --tree --level=2";
     ll = "eza  -a --no-user --long";
     la = "eza -lah ";
@@ -36,5 +36,7 @@
     cat = "bat";
     man = "batman";
     dysk = "dysk -c label+default";
+    rebuild = "nh os switch -H default";
+    update = "nh os switch -H default --update";
   };
 }
