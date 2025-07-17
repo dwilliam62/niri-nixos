@@ -19,7 +19,7 @@
             namespace = "waypaper";
           }
         ];
-        layer = "background";
+        layer = "quickshell-wallpaper";
         overview = "show";
       }
     ];
