@@ -20,7 +20,6 @@
           }
         ];
         place-within-backdrop = true;
-        overview = "show";
       }
     ];
     window-rules = [
