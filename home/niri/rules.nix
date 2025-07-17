@@ -17,7 +17,7 @@
     window-rules = [
       {
         matches = [
-          { app-id = "goggle-chrome-stable"; }
+          { app-id = "goggle-chrome"; }
         ];
         open-on-workspace = "browser";
         geometry-corner-radius = {
@@ -56,7 +56,7 @@
         clip-to-geometry = true;
 
         default-column-width = {
-          proportion = 0.75;
+          proportion = 0.85;
         };
 
       }
