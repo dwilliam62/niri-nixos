@@ -19,7 +19,7 @@
             namespace = "quickshell-wallpaper";
           }
         ];
-        layer = "background";
+        place-within-backdrop = true;
         overview = "show";
       }
     ];
