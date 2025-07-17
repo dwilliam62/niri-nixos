@@ -4,12 +4,15 @@
   imports = [
     ./hardware-configuration.nix
     "${self}/system/greeter/greetd.nix"
-    "${self}/system/programs/steam.nix"
-    "${self}/system/programs/lact.nix"
+    #"${self}/system/programs/steam.nix"
+    #"${self}/system/programs/lact.nix"
+    "${self}/system/programs/nh.nix"
+    "${self}/system/programs/thunar.nix"
     "${self}/system/programs/stylix.nix"
     "${self}/system/xdg.nix"
     "${self}/system/environment.nix"
     "${self}/system/packages.nix"
+    "${self}/system/fonts.nix"
     #"${self}/system/filesystems.nix"
     inputs.home-manager.nixosModules.default
   ];
