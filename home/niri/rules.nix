@@ -21,6 +21,14 @@
         ];
         place-within-backdrop = true;
       }
+      {
+        matches = [
+          {
+            namespace = "wallpaper";
+          }
+        ];
+        place-within-backdrop = true;
+      }
     ];
     window-rules = [
       {
