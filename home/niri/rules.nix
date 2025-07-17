@@ -8,7 +8,7 @@
       {
         matches = [
           {
-            namespace = "^swww-daemon$";
+            namespace = "^wallpaper";
           }
         ];
         place-within-backdrop = true;
