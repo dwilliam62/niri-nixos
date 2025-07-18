@@ -117,13 +117,31 @@ let
     ];
   };
 
+  cpuModule = {
+    type = "cpu";
+    interval = 5;
+    format = " {usage}%";
+  };
+
+  memoryModule = {
+    type = "memory";
+    interval = 5;
+    format = " {used_mem_percent}%";
+  };
+
+  idleInhibitorModule = {
+    type = "idle_inhibitor";
+    format = "{icon}";
+    tooltip = "true";
+  };
+
   ironbarConfig = pkgs.writeText "ironbar-config.json" (builtins.toJSON {
     position = barPosition;
     anchor_to_edges = true;
     height = barHeight;
     start = [ workspacesModule ];
     center = [ musicModule ];
-    end = [ volumeModule systrayModule powerModule clockModule ];
+    end = [ idleInhibitorModule cpuModule memoryModule volumeModule systrayModule powerModule clockModule ];
   });
 
   ironbarStyle = pkgs.writeText "ironbar-style.css" ''
