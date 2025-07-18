@@ -143,9 +143,9 @@
         #"arrpc"
         "waypaper --restore"
         "swaync" 
-        "ironbar"
+        #"ironbar"  #still working out the issues
         #"qs" # Don't Run quickshell breaks waypaper 
-        #"waybar -c ~/.config/waybar/config -s ~/.config/waybar/style.css"
+        "waybar -c ~/.config/waybar/config -s ~/.config/waybar/style.css"
       ];
       # Startup ends
 
