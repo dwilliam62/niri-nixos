@@ -164,7 +164,7 @@
     height = barHeight;
     start = [launcherModule workspacesModule systrayModule];
     center = [musicModule focusedModule];
-    end = [clipboardModule volumeModule powerModule clockModule];
+    end = [volumeModule powerModule clockModule];
   });
 
   ironbarStyle = pkgs.writeText "ironbar-style.css" ''
@@ -210,7 +210,6 @@
     }
 
     .launcher {
-      margin-right: 25px;
       padding-left: 20px;
       padding-right: 20px;
     }
