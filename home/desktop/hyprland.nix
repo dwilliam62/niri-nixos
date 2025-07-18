@@ -143,7 +143,7 @@
         #"waypaper --restore"
         "swaync"
         "ironbar"
-        "qs" # Run quickshell
+        #"qs" # Run quickshell
         #"waybar -c ~/.config/waybar/config -s ~/.config/waybar/style.css"
       ];
       # Startup ends
