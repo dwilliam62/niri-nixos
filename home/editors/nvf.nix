@@ -1,6 +1,7 @@
 {
   inputs,
   config,
+  lib,
   ...
 }: {
   imports = [inputs.nvf.homeManagerModules.default];
@@ -186,11 +187,11 @@
       };
       statusline.lualine = {
         enable = true;
-        theme = "catppuccin";
+        theme = lib.mkDefault "catppuccin";
       };
       theme = {
         enable = true;
-        name = "catppuccin";
+        name = lib.mkDefault "catppuccin";
         style = "mocha";
         transparent = false;
       };
