@@ -142,9 +142,8 @@
         #"[workspace 3] discord"
         #"arrpc"
         "waypaper --restore"
-        #"swaync"  # Trying ironbar notification first
+        "swaync" 
         "ironbar"
-        "nm-applet --indicator"
         #"qs" # Don't Run quickshell breaks waypaper 
         #"waybar -c ~/.config/waybar/config -s ~/.config/waybar/style.css"
       ];
