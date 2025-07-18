@@ -79,6 +79,9 @@
         kb_layout = "us";
         follow_mouse = 1;
         sensitivity = -0.2;
+        cursor {
+          size = 24;
+        }
       };
 
       binds = {
@@ -136,7 +139,7 @@
 
       # Startup starts
       exec-once = [
-        "hyprctl setcursor theme_NotwaitaBlack 22"
+        "hyprctl setcursor theme_NotwaitaBlack 24"
         "systemctl --user start hyprpolkitagent"
         #"[workspace 2] vesktop"
         #"arrpc"

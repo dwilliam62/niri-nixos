@@ -21,6 +21,7 @@ in
     ../../home/desktop/hyprlock.nix
     ../../home/desktop/hypridle.nix
     ../../home/desktop/walker.nix
+    ../../home/desktop/waybar-ddubs-2.nix
 
     ../../home/editors/vscode.nix
     ../../home/editors/nixvim.nix
