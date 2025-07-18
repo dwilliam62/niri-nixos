@@ -22,6 +22,7 @@ in
     ../../home/desktop/hypridle.nix
     ../../home/desktop/walker.nix
     ../../home/desktop/waybar-ddubs-2.nix
+    ../../home/desktop/ironbar.nix
 
     ../../home/editors/vscode.nix
     ../../home/editors/nixvim.nix

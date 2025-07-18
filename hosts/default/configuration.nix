@@ -13,7 +13,6 @@
     "${self}/system/environment.nix"
     "${self}/system/packages.nix"
     "${self}/system/fonts.nix"
-    "${self}/home/desktop/ironbar.nix"
     #"${self}/system/filesystems.nix"
     inputs.home-manager.nixosModules.default
   ];
