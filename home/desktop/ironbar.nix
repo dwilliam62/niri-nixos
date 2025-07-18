@@ -142,15 +142,27 @@ let
   };
 
   sysInfoModule = {
-    type = "sys_info";
-    format = "{os} {kernel}";
+    type = "script";
+    class = "sys-info";
     interval = 3600;
+    tooltip = "System Information";
+    command = ''
+      os=$(grep PRETTY_NAME /etc/os-release | cut -d '"' -f 2 | sed 's/ NixOS .*//')
+      kernel=$(uname -r)
+      echo " $os-$kernel"
+    '';
   };
 
   clipboardModule = {
-    type = "clipboard";
-    max_length = 20;
-    format = "";
+    type = "custom";
+    class = "clipboard";
+    tooltip = "Clipboard History";
+    on_click_left = "pkill rofi || cliphist list | rofi -dmenu | cliphist decode | wl-copy";
+    bar = [{
+      type = "label";
+      class = "clipboard-icon";
+      label = "";
+    }];
   };
 
   ironbarConfig = pkgs.writeText "ironbar-config.json" (builtins.toJSON {
