@@ -12,7 +12,7 @@ with pkgs;
 #  prismlauncher
 #  heroic
 #  peazip
-  nautilus
+ # nautilus
   file-roller
 
   # TUI
@@ -42,13 +42,11 @@ with pkgs;
   tree
   libnotify
   nvd
-  wl-clipboard
-  pywalfox-native
+  #pywalfox-native
   imagemagick
   amdvlk
   rar
   unzip
-  droidcam
   gowall
   gruvbox-gtk-theme
   papirus-icon-theme

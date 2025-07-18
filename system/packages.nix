@@ -30,8 +30,8 @@
 
     adwaita-icon-theme
     atop
-    arrpc
-    alvr
+    #arrpc
+    #alvr
     btop
     base16-schemes
     bottom
