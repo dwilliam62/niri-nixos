@@ -212,6 +212,7 @@
     .launcher {
       padding-left: 20px;
       padding-right: 20px;
+      font-size: 24pt;
     }
 
     .clock,
