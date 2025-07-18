@@ -164,7 +164,7 @@
     height = barHeight;
     start = [launcherModule workspacesModule systrayModule];
     center = [musicModule focusedModule];
-    end = [clipboardModules volumeModule powerModule clockModule];
+    end = [clipboardModule volumeModule powerModule clockModule];
   });
 
   ironbarStyle = pkgs.writeText "ironbar-style.css" ''
