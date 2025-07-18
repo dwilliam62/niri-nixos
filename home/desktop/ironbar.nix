@@ -203,6 +203,10 @@ let
     padding-left: 0;
   }
 
+  .launcher {
+    margin-right: 15px;
+  }
+
   .clock,
   .music,
   .workspaces .item,
