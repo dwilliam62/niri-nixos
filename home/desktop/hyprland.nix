@@ -138,12 +138,13 @@
       exec-once = [
         "hyprctl setcursor Adwaita 24"
         "systemctl --user start hyprpolkitagent"
-        #"[workspace 2] vesktop"
+        "[workspace 1] ghostty"
+        #"[workspace 3] discord"
         #"arrpc"
-        #"waypaper --restore"
-        "swaync"
+        "waypaper --restore"
+        #"swaync"  # Trying ironbar notification first
         "ironbar"
-        #"qs" # Run quickshell
+        #"qs" # Don't Run quickshell breaks waypaper 
         #"waybar -c ~/.config/waybar/config -s ~/.config/waybar/style.css"
       ];
       # Startup ends
