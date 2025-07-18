@@ -22,7 +22,6 @@
 in
   with lib; {
     # Configure & Theme Waybar
-
     programs.waybar = {
       enable = true;
       package = pkgs.waybar;
@@ -31,17 +30,19 @@ in
           layer = "top";
           position = "top";
 
-          modules-left = ["custom/startmenu" "sway/workspaces" "sway/window" "tray"];
-          modules-center = ["clock"];
-          modules-right = ["idle_inhibitor" "pulseaudio" "battery" "custom/exit"];
+          modules-left = ["custom/startmenu" "tray" "hyprland/window"];
+          modules-center = ["hyprland/workspaces"];
+          modules-right = ["idle_inhibitor" "custom/notification" "pulseaudio" "battery" "clock" "custom/exit"];
 
-          "sway/workspaces" = {
+          "hyprland/workspaces" = {
             format = "{name}";
             format-icons = {
               default = " ";
               active = " ";
               urgent = " ";
             };
+            on-scroll-up = "hyprctl dispatch workspace e+1";
+            on-scroll-down = "hyprctl dispatch workspace e-1";
           };
           "clock" = {
             format = '' {:%H:%M}'';
@@ -51,7 +52,7 @@ in
             tooltip = true;
             tooltip-format = "<big>{:%A, %d.%B %Y }</big><tt><small>{calendar}</small></tt>";
           };
-          "sway/window" = {
+          "hyprland/window" = {
             max-length = 60;
             separate-outputs = false;
           };
@@ -111,7 +112,7 @@ in
             tooltip = false;
             format = " ";
             # exec = "rofi -show drun";
-            on-click = "walker";
+            on-click = "rofi -show drun";
           };
           "idle_inhibitor" = {
             format = "{icon}";
@@ -157,97 +158,197 @@ in
       style = concatStrings [
         ''
           * {
-            font-size: 18px;
+            font-size: 16px;
             font-family: JetBrainsMono Nerd Font, Font Awesome, sans-serif;
             font-weight: bold;
           }
-
           window#waybar {
-            background-color: rgba(19, 23, 33, 0.8);
-            border-radius: 15px;
+            /*
+
+              background-color: rgba(26,27,38,0);
+              border-bottom: 1px solid rgba(26,27,38,0);
+              border-radius: 0px;
+              color: #${base0F};
+            */
+
+            background-color: rgba(26,27,38,0);
+            border-bottom: 1px solid rgba(26,27,38,0);
+            border-radius: 0px;
             color: #${base0F};
-            margin: 20px 10% 0 10%;
           }
-
           #workspaces {
-            background: transparent;
-            margin: 0 5px;
-            padding: 0 5px;
+            /*
+              Eternal
+              background: linear-gradient(180deg, #${base00}, #${base01});
+              margin: 5px 5px 5px 0px;
+              padding: 0px 10px;
+              border-radius: 0px 15px 15px 0px;
+              border: 0px;
+              font-style: normal;
+              color: #${base00};
+            */
+            background: linear-gradient(45deg, #${base01}, #${base01});
+            margin: 5px;
+            padding: 0px 1px;
+            border-radius: 15px;
+            border: 0px;
+            font-style: normal;
+            color: #${base00};
           }
-
           #workspaces button {
             padding: 0px 5px;
             margin: 4px 3px;
-            border-radius: 10px;
+            border-radius: 15px;
+            border: 0px;
             color: #${base00};
             background: linear-gradient(45deg, #${base0D}, #${base0E});
             opacity: 0.5;
             transition: all 0.3s ease-in-out;
           }
-
           #workspaces button.active {
+            padding: 0px 5px;
+            margin: 4px 3px;
+            border-radius: 15px;
+            border: 0px;
+            color: #${base00};
+            background: linear-gradient(45deg, #${base0D}, #${base0E});
             opacity: 1.0;
             min-width: 40px;
+            transition: all 0.3s ease-in-out;
           }
-
           #workspaces button:hover {
+            border-radius: 15px;
+            color: #${base00};
+            background: linear-gradient(45deg, #${base0D}, #${base0E});
             opacity: 0.8;
           }
-
           tooltip {
             background: #${base00};
             border: 1px solid #${base0E};
             border-radius: 10px;
           }
-
           tooltip label {
             color: #${base07};
           }
-
-          /* Reset individual module styles */
-          #window,
-          #memory,
-          #clock,
-          #idle_inhibitor,
-          #cpu,
-          #disk,
-          #battery,
-          #network,
-          #tray,
-          #pulseaudio,
-          #custom-notification,
-          #custom-startmenu,
-          #custom-exit {
-            color: #${base0F};
-            background: transparent;
-            border-radius: 0px;
-            margin: 0;
-            padding: 0 15px;
+          #window {
+            /*
+              Eternal
+              color: #${base05};
+              background: #${base00};
+              border-radius: 15px;
+              margin: 5px;
+              padding: 2px 20px;
+            */
+            margin: 5px;
+            padding: 2px 20px;
+            color: #${base05};
+            background: #${base01};
+            border-radius: 15px 15px 15px 15px;
           }
-
+          #memory {
+            color: #${base0F};
+            /*
+              Eternal
+              background: #${base00};
+              border-radius: 15px 15px 15px 15px;
+              margin: 5px;
+              padding: 2px 20px;
+            */
+            background: #${base01};
+            margin: 5px;
+            padding: 2px 20px;
+            border-radius: 15px 15px 15px 15px;
+          }
           #clock {
             color: #${base0B};
-          }
-          #pulseaudio {
-            color: #${base0D};
-          }
-          #custom-notification {
-            color: #${base0C};
-          }
-          #custom-startmenu {
-            color: #${base0E};
-          }
-          #custom-exit {
-            color: #${base0E};
-          }
-          #battery {
-            color: #${base08};
-          }
-          #network {
-            color: #${base09};
+              background: #${base00};
+              border-radius: 15px 15px 15px 15px;
+              margin: 5px;
+              padding: 2px 20px;
           }
           #idle_inhibitor {
             color: #${base0A};
+              background: #${base00};
+              border-radius: 15px 15px 15px 15px;
+              margin: 3px;
+              padding: 2px 20px;
+          }
+          #cpu {
+            color: #${base07};
+              background: #${base00};
+              border-radius: 15px 15px 15px 15px;
+              margin: 5px;
+              padding: 2px 20px;
+          }
+          #disk {
+            color: #${base0F};
+              background: #${base00};
+              border-radius: 15px 15px 15px 15px;
+              margin: 5px;
+              padding: 2px 20px;
+          }
+          #battery {
+            color: #${base08};
+            background: #${base00};
+            border-radius: 15px 15px 15px 15px;
+            margin: 5px;
+            padding: 2px 20px;
+          }
+          #network {
+            color: #${base09};
+            background: #${base00};
+            border-radius: 15px 15px 15px 15px;
+            margin: 5px;
+            padding: 2px 20px;
+          }
+          #tray {
+            color: #${base05};
+            background: #${base00};
+            border-radius: 15px 15px 15px 15px;
+            margin: 5px;
+            padding: 2px 15px;
+          }
+          #pulseaudio {
+            color: #${base0D};
+            /*
+              Eternal
+              background: #${base00};
+              border-radius: 15px 15px 15px 15px;
+              margin: 5px;
+              padding: 2px 20px;
+            */
+            background: #${base01};
+            margin: 4px;
+            padding: 2px 20px;
+            border-radius: 15px 15px 15px 15px;
+          }
+          #custom-notification {
+            color: #${base0C};
+            background: #${base00};
+            border-radius: 15px 15px 15px 15px;
+            margin: 5px;
+            padding: 2px 20px;
+          }
+          #custom-startmenu {
+            color: #${base0E};
+            background: #${base00};
+            border-radius: 0px 15px 15px 0px;
+            margin: 5px 5px 5px 0px;
+            padding: 2px 20px;
+          }
+          #idle_inhibitor {
+            color: #${base09};
+            background: #${base00};
+            border-radius: 15px 15px 15px 15px;
+            margin: 5px;
+            padding: 2px 20px;
+          }
+          #custom-exit {
+            color: #${base0E};
+            background: #${base00};
+            border-radius: 15px 0px 0px 15px;
+            margin: 5px 0px 5px 5px;
+            padding: 2px 20px;
           }
         ''
       ];

@@ -6,10 +6,19 @@
 }:
 
 {
+
+ # Enable Hyprland and niri to create sessions and set dependenciew
+
+  programs = {
+      hyprland = {
+        enable = true;
+      };
+    };
+
   environment.systemPackages = with pkgs; [
 
     inputs.wfetch.packages.${pkgs.system}.default #custom fetch for nixos
-
+    ironbar
     adwaita-icon-theme
     atop
     arrpc

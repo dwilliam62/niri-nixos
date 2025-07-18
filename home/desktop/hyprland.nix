@@ -21,7 +21,7 @@
       # Default Apps
       "$mainMod" = "SUPER";
       "$terminal" = "ghostty";
-      "$browser" = "firefox";
+      "$browser" = "google-chrome-stable";
       "$menu" = "walker";
       "$fileManager" = "thunar";
 
@@ -33,6 +33,7 @@
 
         "$mainMod, RETURN, exec, $terminal"
         "$mainMod, B, exec, $browser"
+        "$mainMod, D, exec, $menu"
         "$mainMod CTRL, RETURN, exec, $menu"
         "$mainMod CTRL, W, exec, waypaper"
         "$mainMod, E, exec, $fileManager"
@@ -75,7 +76,7 @@
       ];
 
       input = {
-        kb_layout = "de";
+        kb_layout = "us";
         follow_mouse = 1;
         sensitivity = -0.2;
       };
@@ -137,10 +138,10 @@
       exec-once = [
         "hyprctl setcursor theme_NotwaitaBlack 22"
         "systemctl --user start hyprpolkitagent"
-        "[workspace 2] vesktop"
-        "arrpc"
+        #"[workspace 2] vesktop"
+        #"arrpc"
         "waypaper --restore"
-        #"swaync"
+        "swaync"
         #"ironbar"
         "qs" # Run quickshell
         #"waybar -c ~/.config/waybar/config -s ~/.config/waybar/style.css"
@@ -164,7 +165,7 @@
 
         "GTK_WAYLAND_DISABLE_WINDOWDECORATION, 1         "
 
-        "GDK_SCALE							 						 , 1.25		 	 "
+        "GDK_SCALE							 						 , 1.0		 	 "
 
         "XCURSOR_THEME						 					 ,Adwaita    "
         "XCURSOR_SIZE						 			 ,24			   "
@@ -173,7 +174,7 @@
 
       # Monitor starts
       monitor = [
-        "DP-1, 2560x1440@359.98, auto, auto"
+        "Virtual-1, 1920x1080@60, auto, 1"
       ];
       # Monitor ends
 
