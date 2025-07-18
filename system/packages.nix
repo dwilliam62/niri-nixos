@@ -26,6 +26,7 @@
     pamixer
     swaynotificationcenter
     cliphist
+    rofi
 
     adwaita-icon-theme
     atop
