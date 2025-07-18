@@ -38,7 +38,7 @@
     tooltip = "Focused Window";
     truncate = {
       mode = "end";
-      length = 40;
+      length = 30;
     };
   };
 
@@ -162,7 +162,7 @@
     position = barPosition;
     anchor_to_edges = true;
     height = barHeight;
-    start = [launcherModule workspacesModule];
+    start = [workspacesModule];
     center = [focusedModule musicModule];
     end = [volumeModule clockModule systrayModule];
   });

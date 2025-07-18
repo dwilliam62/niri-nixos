@@ -91,7 +91,7 @@ in {
     #font-family = SFMono Nerd Font
     #font-family = MapleMono Nerd Font
 
-    title = "ddubsOS-GhosTTY"
+    title = "GhosTTY"
 
     wait-after-command = false
     shell-integration = detect
