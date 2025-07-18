@@ -27,6 +27,16 @@ let
     highlight_active = true;
   };
 
+  focusedModule = {
+    type = "focused";
+    format = "{icon} {title}";
+    tooltip = "Focused Window";
+    truncate = {
+      mode = "end";
+      length = 40;
+    };
+  };
+
   clockModule = {
     type = "label";
     class = "clock";
@@ -141,18 +151,6 @@ let
     format = " {used_mem_percent}%";
   };
 
-  sysInfoModule = {
-    type = "script";
-    class = "sys-info";
-    interval = 3600;
-    tooltip = "System Information";
-    command = ''
-      os=$(grep PRETTY_NAME /etc/os-release | cut -d '"' -f 2 | sed 's/ NixOS .*//')
-      kernel=$(uname -r)
-      echo " $os-$kernel"
-    '';
-  };
-
   clipboardModule = {
     type = "custom";
     class = "clipboard";
@@ -169,9 +167,9 @@ let
     position = barPosition;
     anchor_to_edges = true;
     height = barHeight;
-    start = [ launcherModule workspacesModule systrayModule ];
+    start = [ launcherModule workspacesModule focusedModule systrayModule ];
     center = [ musicModule ];
-    end = [ sysInfoModule cpuModule memoryModule clipboardModule volumeModule powerModule clockModule ];
+    end = [ cpuModule memoryModule clipboardModule volumeModule powerModule clockModule ];
   });
 
   ironbarStyle = pkgs.writeText "ironbar-style.css" ''
