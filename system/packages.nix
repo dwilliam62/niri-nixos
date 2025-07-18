@@ -19,6 +19,7 @@
 
     inputs.wfetch.packages.${pkgs.system}.default #custom fetch for nixos
     ironbar
+    pamixer
     adwaita-icon-theme
     atop
     arrpc
