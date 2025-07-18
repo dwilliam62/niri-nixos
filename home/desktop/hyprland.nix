@@ -136,13 +136,13 @@
 
       # Startup starts
       exec-once = [
-        "hyprctl setcursor theme_NotwaitaBlack 24"
+        "hyprctl setcursor Adwaita 24"
         "systemctl --user start hyprpolkitagent"
         #"[workspace 2] vesktop"
         #"arrpc"
         "waypaper --restore"
         "swaync"
-        #"ironbar"
+        "ironbar"
         "qs" # Run quickshell
         #"waybar -c ~/.config/waybar/config -s ~/.config/waybar/style.css"
       ];
