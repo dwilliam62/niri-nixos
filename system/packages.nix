@@ -24,7 +24,7 @@
 
     ironbar
     pamixer
-    swaync
+    swaynotificationcenter
 
     adwaita-icon-theme
     atop
