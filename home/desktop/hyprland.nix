@@ -140,7 +140,7 @@
         "systemctl --user start hyprpolkitagent"
         #"[workspace 2] vesktop"
         #"arrpc"
-        "waypaper --restore"
+        #"waypaper --restore"
         "swaync"
         "ironbar"
         "qs" # Run quickshell

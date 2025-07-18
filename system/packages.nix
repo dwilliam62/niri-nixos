@@ -13,13 +13,19 @@
       hyprland = {
         enable = true;
       };
+      niri = {
+        enable = true;
+      };
     };
 
   environment.systemPackages = with pkgs; [
 
     inputs.wfetch.packages.${pkgs.system}.default #custom fetch for nixos
+
     ironbar
     pamixer
+    swaync
+
     adwaita-icon-theme
     atop
     arrpc
