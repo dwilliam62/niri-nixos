@@ -1,6 +1,9 @@
-{ config, pkgs, lib, ... }:
-
-let
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
   # Configuration options
   barHeight = 36;
   barPosition = "top";
@@ -12,18 +15,20 @@ let
     class = "launcher";
     tooltip = "Application Launcher";
     on_click_left = "walker";
-    bar = [{
-      type = "label";
-      class = "launcher-icon";
-      label = "";
-    }];
+    bar = [
+      {
+        type = "label";
+        class = "launcher-icon";
+        label = "";
+      }
+    ];
   };
 
   workspacesModule = {
     type = "workspaces";
     all_monitors = false;
     tooltip = "Workspaces";
-    hidden = [ "special:special" ];
+    hidden = ["special:special"];
     highlight_active = true;
   };
 
@@ -139,187 +144,189 @@ let
     ];
   };
 
-
   clipboardModule = {
     type = "custom";
     class = "clipboard";
     tooltip = "Clipboard History";
     on_click_left = "pkill rofi || cliphist list | rofi -dmenu | cliphist decode | wl-copy";
-    bar = [{
-      type = "label";
-      class = "clipboard-icon";
-      label = "";
-    }];
+    bar = [
+      {
+        type = "label";
+        class = "clipboard-icon";
+        label = "";
+      }
+    ];
   };
 
   ironbarConfig = pkgs.writeText "ironbar-config.json" (builtins.toJSON {
     position = barPosition;
     anchor_to_edges = true;
     height = barHeight;
-    start = [ launcherModule workspacesModule systrayModule ];
-    center = [ musicModule focusedModule ];
-    end = [ volumeModule powerModule clockModule ];
+    start = [launcherModule workspacesModule systrayModule];
+    center = [musicModule focusedModule];
+    end = [volumeModule powerModule clockModule];
   });
 
   ironbarStyle = pkgs.writeText "ironbar-style.css" ''
-  .background {
-    background: none;
-  }
+    .background {
+      background: none;
+    }
 
-  #bar {
-    all: unset;
-    font-family: "JetBrains Mono", "Font Awesome 6 Free";
-    font-weight: bold;
-    background-color: #0f1419;
-    color: #c5cdd3;
-    padding-right: 5px;
-    padding-left: 10px;
-  }
+    #bar {
+      all: unset;
+      font-family: "JetBrains Mono", "Font Awesome 6 Free";
+      font-weight: bold;
+      background-color: #0f1419;
+      color: #c5cdd3;
+      padding-right: 5px;
+      padding-left: 10px;
+    }
 
-  .popup {
-    font-family: "JetBrains Mono";
-    background-color: #0f1419;
-    color: #c5cdd3;
-    padding: 15px;
-    border: 1px solid #1e2429;
-    border-radius: 10px;
-  }
+    .popup {
+      font-family: "JetBrains Mono";
+      background-color: #0f1419;
+      color: #c5cdd3;
+      padding: 15px;
+      border: 1px solid #1e2429;
+      border-radius: 10px;
+    }
 
-  tooltip.background,
-  menu {
-    background-color: #0f1419;
-    color: #c5cdd3;
-    border: 1px solid #1e2429;
-    border-radius: 10px;
-  }
+    tooltip.background,
+    menu {
+      background-color: #0f1419;
+      color: #c5cdd3;
+      border: 1px solid #1e2429;
+      border-radius: 10px;
+    }
 
-  tooltip label {
-    color: #c5cdd3;
-  }
+    tooltip label {
+      color: #c5cdd3;
+    }
 
-  .workspaces {
-    font-weight: bold;
-    margin: 0;
-    padding-left: 0;
-  }
+    .workspaces {
+      font-weight: bold;
+      margin: 0;
+      padding-left: 0;
+    }
 
-  .launcher {
-    margin-right: 15px;
-  }
+    .launcher {
+      margin-right: 25px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
 
-  .clock,
-  .music,
-  .workspaces .item,
-  .tray,
-  .script,
-  .battery-icon,
-  .power-icon,
-  .volume-icon,
-  .brightness-icon,
-  .brightness-percent,
-  .battery-percent,
-  .volume-percent,
-  .network_manager,
-  .systray-revealer-icon {
-    margin: 0;
-    background: none;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: #c5cdd3;
-  }
+    .clock,
+    .music,
+    .workspaces .item,
+    .tray,
+    .script,
+    .battery-icon,
+    .power-icon,
+    .volume-icon,
+    .brightness-icon,
+    .brightness-percent,
+    .battery-percent,
+    .volume-percent,
+    .network_manager,
+    .systray-revealer-icon {
+      margin: 0;
+      background: none;
+      padding-left: 10px;
+      padding-right: 10px;
+      color: #c5cdd3;
+    }
 
-  .music {
-    font-style: italic;
-    color: #91b4d5;
-  }
+    .music {
+      font-style: italic;
+      color: #91b4d5;
+    }
 
-  .power-icon {
-    color: #c5cdd3;
-  }
+    .power-icon {
+      color: #c5cdd3;
+    }
 
-  .battery,
-  .custom-volume,
-  .brightness {
-    margin: 0;
-    padding: 0;
-  }
+    .battery,
+    .custom-volume,
+    .brightness {
+      margin: 0;
+      padding: 0;
+    }
 
-  .battery-icon,
-  .brightness-icon,
-  .systray-revealer-icon {
-    font-size: 16px;
-  }
+    .battery-icon,
+    .brightness-icon,
+    .systray-revealer-icon {
+      font-size: 16px;
+    }
 
-  .volume-icon {
-    font-size: 21px;
-  }
+    .volume-icon {
+      font-size: 21px;
+    }
 
-  .battery-percent,
-  .volume-percent,
-  .brightness-percent,
-  .tray {
-    margin: 0;
-    padding-right: 10px;
-    padding-left: 0px;
-  }
+    .battery-percent,
+    .volume-percent,
+    .brightness-percent,
+    .tray {
+      margin: 0;
+      padding-right: 10px;
+      padding-left: 0px;
+    }
 
-  .workspaces .item {
-    color: #5c6773;
-    padding-left: 3px;
-    padding-right: 10px;
-  }
+    .workspaces .item {
+      color: #5c6773;
+      padding-left: 3px;
+      padding-right: 10px;
+    }
 
-  .workspaces .item.focused {
-    color: #36a3d9;
-  }
+    .workspaces .item.focused {
+      color: #36a3d9;
+    }
 
-  .power-button {
-    font-size: 42pt;
-    padding-right: 35px;
-    padding-left: 20px;
-    margin: 5px;
-  }
+    .power-button {
+      font-size: 42pt;
+      padding-right: 35px;
+      padding-left: 20px;
+      margin: 5px;
+    }
 
-  .power-button-box {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
+    .power-button-box {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
 
-  .popup-music .album-art {
-    margin-right: 1em;
-  }
+    .popup-music .album-art {
+      margin-right: 1em;
+    }
 
-  .popup-music .icon-box {
-    margin-right: 0.4em;
-  }
+    .popup-music .icon-box {
+      margin-right: 0.4em;
+    }
 
-  .popup-music .title .icon, .popup-music .title .label {
-    font-size: 1.7em;
-  }
+    .popup-music .title .icon, .popup-music .title .label {
+      font-size: 1.7em;
+    }
 
-  .popup-music .volume .slider slider {
-    border-radius: 0px
-  }
+    .popup-music .volume .slider slider {
+      border-radius: 0px
+    }
 
-  .popup-music .volume .icon {
-    margin-left: 4px;
-  }
+    .popup-music .volume .icon {
+      margin-left: 4px;
+    }
 
-  .popup-music .progress .slider slider {
-    border-radius: 0px
-  }
+    .popup-music .progress .slider slider {
+      border-radius: 0px
+    }
 
-  scale trough, scale slider {
-    min-width: 5px;
-    min-height: 5px;
-  }
+    scale trough, scale slider {
+      min-width: 5px;
+      min-height: 5px;
+    }
 
-  .popup-volume .device-box .btn-mute,
-  .popup-volume .apps-box .app-box .btn-mute {
-    font-size: 24px;
-  }
+    .popup-volume .device-box .btn-mute,
+    .popup-volume .apps-box .app-box .btn-mute {
+      font-size: 24px;
+    }
   '';
-
 in {
   xdg.configFile = {
     "ironbar/config.json".source = ironbarConfig;
