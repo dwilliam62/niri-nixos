@@ -40,7 +40,7 @@ in {
     ../../home/programs/evil-helix.nix
     ../../home/programs/kitty.nix
     ../../home/programs/wezterm.nix
-    ../../home/programs/tealdear.nix
+    ../../home/programs/tealdeer.nix
 
     ../../system/shell/zsh.nix
 
