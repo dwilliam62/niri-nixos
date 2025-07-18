@@ -10,6 +10,7 @@
     home-manager.url = "github:nix-community/home-manager";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     nixvim.url = "github:nix-community/nixvim";
+    nvf.url = "github:notashelf/nvf";
     wfetch.url = "github:iynaix/wfetch";
     nix-flatpak.url = "github:gmodena/nix-flatpak?ref=latest";
 
@@ -33,7 +34,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, chaotic, nur, nixvim, niri, quickshell, nix-flatpak, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, chaotic, nur, nixvim,  niri, quickshell, nix-flatpak, ... }@inputs: {
 
     # Expose NixOS configuration
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
