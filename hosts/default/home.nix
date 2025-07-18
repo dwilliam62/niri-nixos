@@ -4,13 +4,10 @@
   inputs,
   self,
   ...
-}:
-
-let
-  allPackages = import ./packages.nix { inherit pkgs; };
-  niriScripts = import ../../home/niri/scripts.nix { inherit pkgs; };
-in
-{
+}: let
+  allPackages = import ./packages.nix {inherit pkgs;};
+  niriScripts = import ../../home/niri/scripts.nix {inherit pkgs;};
+in {
   home.username = "dwilliams";
   home.homeDirectory = "/home/dwilliams";
 
@@ -25,11 +22,12 @@ in
     ../../home/desktop/ironbar.nix
 
     ../../home/editors/vscode.nix
-    ../../home/editors/nixvim.nix
+    #../../home/editors/nixvim.nix
+    ../../home/editors/nvf.nix
 
     ../../home/programs/ghostty.nix
     ../../home/programs/fastfetch.nix
-    ../../home/programs/spicetify.nix
+    #../../home/programs/spicetify.nix
     ../../home/programs/obs.nix
     ../../home/programs/vesktop.nix
     ../../home/programs/firefox.nix
@@ -40,6 +38,9 @@ in
     ../../home/programs/fzf.nix
     ../../home/programs/tmux.nix
     ../../home/programs/evil-helix.nix
+    ../../home/programs/kitty.nix
+    ../../home/programs/wezterm.nix
+    ../../home/programs/tealdear.nix
 
     ../../system/shell/zsh.nix
 
