@@ -139,17 +139,6 @@ let
     ];
   };
 
-  cpuModule = {
-    type = "cpu";
-    interval = 5;
-    format = " {usage}%";
-  };
-
-  memoryModule = {
-    type = "memory";
-    interval = 5;
-    format = " {used_mem_percent}%";
-  };
 
   clipboardModule = {
     type = "custom";
@@ -167,9 +156,9 @@ let
     position = barPosition;
     anchor_to_edges = true;
     height = barHeight;
-    start = [ launcherModule workspacesModule focusedModule systrayModule ];
-    center = [ musicModule ];
-    end = [ cpuModule memoryModule clipboardModule volumeModule powerModule clockModule ];
+    start = [ launcherModule workspacesModule systrayModule ];
+    center = [ musicModule focusedModule ];
+    end = [ volumeModule powerModule clockModule ];
   });
 
   ironbarStyle = pkgs.writeText "ironbar-style.css" ''

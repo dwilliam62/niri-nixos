@@ -25,6 +25,7 @@
     ironbar
     pamixer
     swaynotificationcenter
+    cliphist
 
     adwaita-icon-theme
     atop
