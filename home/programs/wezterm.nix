@@ -53,8 +53,8 @@
      config.window_background_opacity = 0.75
       -- config.color_scheme = "nightfox"
       -- config.color_scheme = 'AdventureTime'
-      config.color_scheme = 'Advark Blue'
-      -- config.color_scheme = 'Dracula'
+      -- config.color_scheme = 'Advark Blue'
+      config.color_scheme = 'Dracula'
      config.font_size = 12
      config.font = wezterm.font("FiraCode", { weight = "Regular", italic = false })
 
