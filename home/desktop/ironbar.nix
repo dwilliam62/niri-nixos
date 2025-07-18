@@ -7,6 +7,18 @@ let
   fontName = "JetBrains Mono";
 
   # Module definitions
+  launcherModule = {
+    type = "custom";
+    class = "launcher";
+    tooltip = "Application Launcher";
+    on_click_left = "walker";
+    bar = [{
+      type = "label";
+      class = "launcher-icon";
+      label = "";
+    }];
+  };
+
   workspacesModule = {
     type = "workspaces";
     all_monitors = false;
@@ -129,19 +141,25 @@ let
     format = " {used_mem_percent}%";
   };
 
-  idleInhibitorModule = {
-    type = "idle_inhibitor";
-    format = "{icon}";
-    tooltip = "true";
+  sysInfoModule = {
+    type = "sys_info";
+    format = "{os} {kernel}";
+    interval = 3600;
+  };
+
+  clipboardModule = {
+    type = "clipboard";
+    max_length = 20;
+    format = "";
   };
 
   ironbarConfig = pkgs.writeText "ironbar-config.json" (builtins.toJSON {
     position = barPosition;
     anchor_to_edges = true;
     height = barHeight;
-    start = [ workspacesModule ];
+    start = [ launcherModule workspacesModule systrayModule ];
     center = [ musicModule ];
-    end = [ idleInhibitorModule cpuModule memoryModule volumeModule systrayModule powerModule clockModule ];
+    end = [ sysInfoModule cpuModule memoryModule clipboardModule volumeModule powerModule clockModule ];
   });
 
   ironbarStyle = pkgs.writeText "ironbar-style.css" ''
