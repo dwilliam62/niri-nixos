@@ -1,25 +1,21 @@
-  {
+{
   config,
   pkgs,
   inputs,
   ...
-}:
-
-{
-
- # Enable Hyprland and niri to create sessions and set dependenciew
+}: {
+  # Enable Hyprland and niri to create sessions and set dependenciew
 
   programs = {
-      hyprland = {
-        enable = true;
-      };
-      niri = {
-        enable = true;
-      };
+    hyprland = {
+      enable = true;
     };
+    niri = {
+      enable = true;
+    };
+  };
 
   environment.systemPackages = with pkgs; [
-
     inputs.wfetch.packages.${pkgs.system}.default #custom fetch for nixos
 
     ironbar
@@ -27,6 +23,9 @@
     swaynotificationcenter
     cliphist
     rofi
+    glxinfo
+    mesa-demos
+    pciutils
 
     adwaita-icon-theme
     atop
@@ -93,4 +92,4 @@
     ugrep
     virt-viewer
   ];
-  }
+}
