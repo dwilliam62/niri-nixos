@@ -4,7 +4,7 @@
       {
         matches = [
           {
-            namespace = "quickshell-wallpapers";
+            namespace = "swww-daemon";
           }
         ];
         place-within-backdrop = true;
@@ -12,7 +12,15 @@
       {
         matches = [
           {
-            namespace = "swww-daemon";
+            namespace = "quickshell-desktop";
+          }
+        ];
+        place-within-backdrop = true;
+      }
+      {
+        matches = [
+          {
+            namespace = "quickshell-wallpaper";
           }
         ];
         place-within-backdrop = true;
