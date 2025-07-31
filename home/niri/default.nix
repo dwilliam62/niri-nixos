@@ -10,7 +10,6 @@
     ./keybinds.nix
     ./rules.nix
     ./autostart.nix
-    
     ./waybar.nix
   ];
 }
