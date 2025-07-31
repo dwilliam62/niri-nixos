@@ -8,7 +8,7 @@
       {
         matches = [
           {
-            namespace = "quickshell-wallpaper";
+            namespace = "wallpaper";
           }
         ];
         place-within-backdrop = true;
@@ -17,7 +17,7 @@
     window-rules = [
       {
         matches = [
-          { app-id = "goggle-chrome"; }
+          {app-id = "goggle-chrome";}
         ];
         open-on-workspace = "browser";
         geometry-corner-radius = {
@@ -32,7 +32,7 @@
       # Vesktop with rounded corners
       {
         matches = [
-          { app-id = "discord"; }
+          {app-id = "discord";}
         ];
         open-on-workspace = "discord";
         geometry-corner-radius = {
@@ -58,7 +58,6 @@
         default-column-width = {
           proportion = 0.85;
         };
-
       }
     ];
   };

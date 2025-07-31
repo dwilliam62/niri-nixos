@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.niri = {
     enable = true;
     package = pkgs.niri;
@@ -17,13 +19,12 @@
         skip-at-startup = true;
       };
 
-
-    overview  = {
+      overview = {
         zoom = 0.65;
-     };
+      };
 
       layout = {
-
+        background-color = "transparent";
         focus-ring = {
           enable = true;
           width = 3;
@@ -70,7 +71,10 @@
             refresh = 60.0;
           };
           scale = 1.0;
-          position = { x = 0; y = 0; };
+          position = {
+            x = 0;
+            y = 0;
+          };
         };
       };
 
