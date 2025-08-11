@@ -1,7 +1,9 @@
-
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   programs.nixvim = {
     enable = true;
     viAlias = true;
@@ -10,7 +12,7 @@
     # Basic options
     opts = {
       number = true;
-      relativenumber = true;
+      relativenumber = false;
       shiftwidth = 2;
       tabstop = 2;
       expandtab = true;
@@ -53,7 +55,7 @@
       treesitter = {
         enable = true;
       };
-      
+
       presence-nvim = {
         enable = true;
         enableLineNumber = true;
@@ -84,7 +86,7 @@
     };
 
     globals = {
-      mapleader = " ";      # Use space as leader
+      mapleader = " "; # Use space as leader
       maplocalleader = " "; # Optional: set local leader too
     };
 
