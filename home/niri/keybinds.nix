@@ -1,14 +1,16 @@
-{ lib, config, pkgs, ... }:
-
-let
-  apps = import ./applications.nix { inherit pkgs; };
-
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}: let
+  apps = import ./applications.nix {inherit pkgs;};
 in {
   programs.niri.settings.binds = with config.lib.niri.actions; let
     pactl = "${pkgs.pulseaudio}/bin/pactl";
 
-    volume-up = spawn pactl [ "set-sink-volume" "@DEFAULT_SINK@" "+5%" ];
-    volume-down = spawn pactl [ "set-sink-volume" "@DEFAULT_SINK@" "-5%" ];
+    volume-up = spawn pactl ["set-sink-volume" "@DEFAULT_SINK@" "+5%"];
+    volume-down = spawn pactl ["set-sink-volume" "@DEFAULT_SINK@" "-5%"];
   in {
     "xf86audioraisevolume".action = volume-up;
     "xf86audiolowervolume".action = volume-down;
@@ -27,8 +29,8 @@ in {
     "super+f".action = fullscreen-window;
     "super+t".action = toggle-window-floating;
 
-    "control+shift+1".action = screenshot;
-    "control+shift+2".action = screenshot-window { write-to-disk = true; };
+    #"control+shift+1".action = screenshot;
+    #"control+shift+2".action = screenshot-window { write-to-disk = true; };
 
     "super+Left".action = focus-column-left;
     "super+Right".action = focus-column-right;
@@ -46,6 +48,5 @@ in {
 
     "Mod+WheelScrollDown".action = focus-workspace-down;
     "Mod+WheelScrollUp".action = focus-workspace-up;
-    
   };
 }

@@ -1,6 +1,11 @@
-{ config, pkgs, inputs, lib, self, ... }:
-
 {
+  config,
+  pkgs,
+  inputs,
+  lib,
+  self,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     "${self}/system/greeter/greetd.nix"
@@ -45,7 +50,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = {inherit inputs;};
     users = {
       "dwilliams" = import ./home.nix;
     };
@@ -58,7 +63,7 @@
     nerd-fonts.droid-sans-mono
     jetbrains-mono
     noto-fonts
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
     material-symbols
@@ -72,8 +77,8 @@
     kernelParams = [
       "video=Virtual-1,1920x1080@60"
     ];
-    kernelModules = [ "v4l2loopback" "i2c-dev" ];
-    initrd.availableKernelModules = [ "i2c-dev" ]; # ✅ Load early in initrd
+    kernelModules = ["v4l2loopback" "i2c-dev"];
+    initrd.availableKernelModules = ["i2c-dev"]; # ✅ Load early in initrd
     extraModprobeConfig = ''
       options v4l2loopback video_nr=0 card_label="DroidCam" exclusive_caps=1
     '';
@@ -82,15 +87,15 @@
     ];
   };
 
-  services.udev.packages = [ pkgs.rwedid ]; # ✅ Enable I2C udev rules
-  services.rpcbind.enable = true; 
-  services.nfs.server.enable = true; 
+  services.udev.packages = [pkgs.rwedid]; # ✅ Enable I2C udev rules
+  services.rpcbind.enable = true;
+  services.nfs.server.enable = true;
   security.sudo.wheelNeedsPassword = false;
-  services.flatpak.enable = true; 
+  services.flatpak.enable = true;
   services.openssh.enable = true;
 
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = ["nix-command" "flakes"];
     auto-optimise-store = true;
   };
 
@@ -127,7 +132,7 @@
   services = {
     xserver = {
       enable = true;
-      videoDrivers = [ "intel" ];
+      videoDrivers = ["intel"];
       xkb = {
         layout = "us";
         variant = "";

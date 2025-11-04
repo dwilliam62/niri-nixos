@@ -34,12 +34,22 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, chaotic, nur, nixvim,  niri, quickshell, nix-flatpak, ... }@inputs: {
-
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    chaotic,
+    nur,
+    nixvim,
+    niri,
+    quickshell,
+    nix-flatpak,
+    ...
+  } @ inputs: {
     # Expose NixOS configuration
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = { inherit self inputs; };
+      specialArgs = {inherit self inputs;};
       modules = [
         ./hosts/default/configuration.nix
         inputs.stylix.nixosModules.stylix

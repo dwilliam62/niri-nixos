@@ -23,7 +23,6 @@
     swaynotificationcenter
     cliphist
     rofi
-    glxinfo
     mesa-demos
     pciutils
 

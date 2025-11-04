@@ -1,18 +1,13 @@
-{
-  pkgs,
-  ...
-}:
-
-with pkgs;
-[
+{pkgs, ...}:
+with pkgs; [
   # Applications
-#  protonplus
-#  lutris
-#  dolphin-emu
-#  prismlauncher
-#  heroic
-#  peazip
- # nautilus
+  #  protonplus
+  #  lutris
+  #  dolphin-emu
+  #  prismlauncher
+  #  heroic
+  #  peazip
+  # nautilus
   file-roller
 
   # TUI
@@ -20,7 +15,6 @@ with pkgs;
   yazi
   atop
   htop
-
 
   # Desktop
   hyprlock
@@ -44,7 +38,7 @@ with pkgs;
   nvd
   #pywalfox-native
   imagemagick
-  amdvlk
+  #amdvlk  # nO longer supported
   rar
   unzip
   gowall
@@ -54,7 +48,7 @@ with pkgs;
   gpu-screen-recorder
   mpv
   slop
-  
+
   # Quickshell stuff
   qt6Packages.qt5compat
   libsForQt5.qt5.qtgraphicaleffects
@@ -67,4 +61,3 @@ with pkgs;
   slurp
   wl-clipboard
 ]
-

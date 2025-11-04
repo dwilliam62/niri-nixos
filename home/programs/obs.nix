@@ -10,7 +10,7 @@
     })
     pkgs.libva
     pkgs.libva-utils
-    pkgs.vaapiVdpau
+    pkgs.libva-vdpau-driver
     pkgs.libvdpau-va-gl
   ];
 }
