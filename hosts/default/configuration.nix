@@ -77,14 +77,18 @@
     kernelParams = [
       "video=Virtual-1,1920x1080@60"
     ];
-    kernelModules = ["v4l2loopback" "i2c-dev"];
+    kernelModules = ["i2c-dev"];
+    #kernelModules = ["v4l2loopback" "i2c-dev"];
     initrd.availableKernelModules = ["i2c-dev"]; # ✅ Load early in initrd
+    #extraModprobeConfig = ''
+    #  options v4l2loopback video_nr=0 card_label="DroidCam" exclusive_caps=1
+    #'';
+    #extraModulePackages = with config.boot.kernelPackages; [
+    #  v4l2loopback
+    #];
     extraModprobeConfig = ''
-      options v4l2loopback video_nr=0 card_label="DroidCam" exclusive_caps=1
+      options video_nr=0 card_label="DroidCam" exclusive_caps=1
     '';
-    extraModulePackages = with config.boot.kernelPackages; [
-      v4l2loopback
-    ];
   };
 
   services.udev.packages = [pkgs.rwedid]; # ✅ Enable I2C udev rules
