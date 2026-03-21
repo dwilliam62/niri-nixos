@@ -4,7 +4,7 @@
   ...
 }: {
   programs.niri.settings.spawn-at-startup = [
-    {command = ["systemctl" "--user" "start" "hyprpolkitagent"];}
+    {command = ["hyprpolkitagent"];}
     #{ command = ["arrpc"]; }
     {command = ["xwayland-satellite"];}
     #{command = ["qs"];}

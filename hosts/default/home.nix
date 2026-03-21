@@ -31,7 +31,6 @@ in {
     #../../home/programs/spicetify.nix
     ../../home/programs/obs.nix
     ../../home/programs/vesktop.nix
-    ../../home/programs/firefox.nix
     ../../home/programs/eza.nix
     ../../home/programs/bat.nix
     ../../home/programs/bottom.nix

@@ -3,10 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    hyprpolkitagent.url = "github:hyprwm/hyprpolkitagent";
     hyprland.url = "github:hyprwm/Hyprland?ref=v0.54.2";
-    nur.url = "github:nix-community/NUR";
     home-manager.url = "github:nix-community/home-manager";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     nixvim.url = "github:nix-community/nixvim";
@@ -38,8 +35,6 @@
     self,
     nixpkgs,
     home-manager,
-    chaotic,
-    nur,
     nixvim,
     niri,
     quickshell,
@@ -56,7 +51,6 @@
         inputs.home-manager.nixosModules.default
         inputs.spicetify-nix.nixosModules.default
         nix-flatpak.nixosModules.nix-flatpak
-        chaotic.nixosModules.default
 
         ({pkgs, ...}: {
           environment.systemPackages = [

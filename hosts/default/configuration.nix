@@ -22,14 +22,6 @@
     inputs.home-manager.nixosModules.default
   ];
 
-  nixpkgs.overlays = [
-    (final: prev: {
-      nur = import inputs.nur {
-        nurpkgs = prev;
-        pkgs = prev;
-      };
-    })
-  ];
 
   users.groups.i2c = {}; # ✅ Ensure group exists
 
