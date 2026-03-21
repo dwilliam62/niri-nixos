@@ -5,9 +5,9 @@ pkgs.writeShellScriptBin "powermenu" ''
     -theme-str 'entry { enabled: false; }' \
     -theme-str 'prompt { enabled: false; }' \
     -theme-str 'inputbar { children: []; enabled: false; }' \
-    -theme-str 'listview { lines: 4; fixed-height: true; spacing: 8px; }' \
+    -theme-str 'listview { lines: 4; fixed-height: true; spacing: 8px; columns: 1; fixed-columns: true; }' \
     -theme-str 'element { padding: 8px 0; }' \
-    -theme-str 'element-text { horizontal-align: 0.5; }' \
+    -theme-str 'element-text { horizontal-align: 0.5; text-align: center; }' \
     -theme-str 'window { width: 360px; }')"
 
   case "$choice" in
