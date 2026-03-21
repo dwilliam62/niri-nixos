@@ -20,7 +20,7 @@
       "$mainMod" = "SUPER";
       "$terminal" = "ghostty";
       "$browser" = "google-chrome-stable";
-      "$menu" = "walker";
+      "$menu" = "env GSK_RENDERER=cairo walker";
       "$fileManager" = "thunar";
 
       # Keybinds Start
@@ -32,6 +32,7 @@
         "$mainMod, RETURN, exec, $terminal"
         "$mainMod, B, exec, $browser"
         "$mainMod, D, exec, $menu"
+        "$mainMod, R, exec, rofi-legacy.menu"
         "$mainMod CTRL, RETURN, exec, $menu"
         "$mainMod CTRL, W, exec, waypaper"
         "$mainMod, E, exec, $fileManager"

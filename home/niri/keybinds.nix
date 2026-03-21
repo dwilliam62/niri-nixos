@@ -23,7 +23,8 @@ in {
     "super+Return".action = spawn apps.terminal;
     "super+Control+Return".action = spawn apps.editor;
     "super+E".action = spawn apps.fileManager;
-    "super+space".action = spawn "walker";
+    "super+space".action = spawn "env" "GSK_RENDERER=cairo" "walker";
+    "super+R".action = spawn "rofi-legacy.menu";
 
     "super+a".action = toggle-overview;
     "super+f".action = fullscreen-window;

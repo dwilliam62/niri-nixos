@@ -11,6 +11,9 @@
 - Switched package lookups to use pkgs.stdenv.hostPlatform.system where applicable.
 - Removed obsolete apps, neovim, clapgrep, etc
 - Fixed `thunar` plugins eval warnings
+- Set `walker` backend to `cairo` trying to resolve menu exiting
+- Set `SUPER + R` Legacy rofi menu as backup for walker
+- Set Hyprland to 0.54.2 Current main branch refactor isn't working VMs
 
 ### 7-15-25
 

@@ -25,8 +25,10 @@ let
     echo "$new" > "$OSD_FILE"
   '';
   wfScript = import ./scripts/wf.nix { inherit pkgs; };
+  rofiLegacyMenu = import ./scripts/rofi-legacy.menu.nix { inherit pkgs; };
 in
 [
   brightnessScript
   wfScript
+  rofiLegacyMenu
 ]
