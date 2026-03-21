@@ -23,12 +23,12 @@ in {
     "super+Return".action = spawn apps.terminal;
     "super+Control+Return".action = spawn apps.editor;
     "super+E".action = spawn apps.fileManager;
-    "super+space".action = spawn "walker-launch";
+    "super+D".action = spawn "rofi-legacy.menu";
     "super+R".action = spawn "rofi-legacy.menu";
 
     "super+a".action = toggle-overview;
     "super+f".action = fullscreen-window;
-    "super+t".action = toggle-window-floating;
+    "super+space".action = toggle-window-floating;
 
     #"control+shift+1".action = screenshot;
     #"control+shift+2".action = screenshot-window { write-to-disk = true; };

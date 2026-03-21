@@ -20,7 +20,7 @@
       "$mainMod" = "SUPER";
       "$terminal" = "ghostty";
       "$browser" = "google-chrome-stable";
-      "$menu" = "walker-launch";
+      "$menu" = "rofi-legacy.menu";
       "$fileManager" = "thunar";
 
       # Keybinds Start
@@ -36,7 +36,7 @@
         "$mainMod CTRL, RETURN, exec, $menu"
         "$mainMod CTRL, W, exec, waypaper"
         "$mainMod, E, exec, $fileManager"
-        "$mainMod, T, togglefloating"
+        "$mainMod, SPACE, togglefloating"
         "$mainMod, F, fullscreen"
         "$mainMod, J, layoutmsg, togglesplit"
         "$mainMod, Q, killactive"
