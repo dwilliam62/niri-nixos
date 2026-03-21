@@ -4,7 +4,7 @@
   browser = "google-chrome-stable";
   #browser = "${pkgs.firefox}/bin/firefox";
   terminal = "${pkgs.ghostty}/bin/ghostty";
-  fileManager = "${pkgs.xfce.thunar}/bin/thunar";
+  fileManager = "${pkgs.thunar}/bin/thunar";
   editor = "nvim";
   #editor = "${pkgs.walker}/bin/walker";
 

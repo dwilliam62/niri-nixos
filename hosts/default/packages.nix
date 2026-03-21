@@ -26,7 +26,7 @@ with pkgs; [
   rustup
   gcc
   gh
-  nixfmt-rfc-style
+  nixfmt
   nixpkgs-fmt
   black
 

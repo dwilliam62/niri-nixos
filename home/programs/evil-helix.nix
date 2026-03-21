@@ -8,7 +8,7 @@ in {
   home.packages = with pkgs; (
     if enableEvilHelix
     then [
-      #inputs.chaotic.packages.${pkgs.system}.evil-helix_git
+      #inputs.chaotic.packages.${pkgs.stdenv.hostPlatform.system}.evil-helix_git
       evil-helix
       cmake-language-server
       jsonnet-language-server

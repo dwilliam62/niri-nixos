@@ -60,7 +60,7 @@
 
         ({pkgs, ...}: {
           environment.systemPackages = [
-            (quickshell.packages.${pkgs.system}.default.override {
+            (quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
               withJemalloc = true;
               withQtSvg = true;
               withWayland = true;

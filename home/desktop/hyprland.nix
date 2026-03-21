@@ -7,7 +7,7 @@
 
 {
   home.packages = with pkgs; [
-    inputs.hyprpolkitagent.packages."${pkgs.system}".hyprpolkitagent
+    inputs.hyprpolkitagent.packages."${pkgs.stdenv.hostPlatform.system}".hyprpolkitagent
   ];
 
   stylix.targets.hyprland.enable = false;

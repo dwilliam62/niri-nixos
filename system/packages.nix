@@ -16,7 +16,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    inputs.wfetch.packages.${pkgs.system}.default #custom fetch for nixos
+    inputs.wfetch.packages.${pkgs.stdenv.hostPlatform.system}.default #custom fetch for nixos
 
     #ironbar    # Failed to build 9/26/25
     pamixer
