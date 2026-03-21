@@ -34,9 +34,9 @@
     base16-schemes
     bottom
     cava
-    clapgrep
+    #clapgrep
     curl
-    ddcutil
+    #ddcutil
     discord
     discord-canary
     dua
@@ -48,17 +48,17 @@
     fd
     findutils
     ffmpeg
-    gemini-cli
+    #gemini-cli
     ghostty
     git
     gnome-themes-extra
     google-chrome
     gcc
-    gitnuro #desktop gui for git
+    #gitnuro #desktop gui for git
     glab #gitlab cli toosl
     gnumake
     htop
-    hyfetch #includisve system fetch
+    #hyfetch #includisve system fetch
     iotop
     inxi
     kitty
@@ -68,7 +68,6 @@
     libva-utils
     libayatana-appindicator
     luarocks
-    lunarvim
     lsd
     mesa
     nh

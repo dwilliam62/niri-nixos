@@ -73,7 +73,7 @@
   boot = {
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
-    kernelPackages = pkgs.linuxPackages_cachyos;
+    kernelPackages = pkgs.linuxPackages;
     kernelParams = [
       "video=Virtual-1,1920x1080@60"
     ];
