@@ -106,13 +106,13 @@ in
           "custom/exit" = {
             tooltip = false;
             format = "⏻";
-            on-click = "sleep 0.1 && wlogout";
+            on-click = "powermenu";
           };
           "custom/startmenu" = {
             tooltip = false;
             format = " ";
             # exec = "rofi -show drun";
-            on-click = "rofi -show drun";
+            on-click = "rofi-legacy.menu";
           };
           "idle_inhibitor" = {
             format = "{icon}";

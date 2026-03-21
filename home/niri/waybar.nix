@@ -28,11 +28,16 @@ let
 
     modules-left = ["custom/menu" "tray"];
     modules-center = ["clock"];
-    modules-right = ["idle_inhibitor" "cpu" "memory" "pulseaudio" "battery"];
+    modules-right = ["idle_inhibitor" "cpu" "memory" "pulseaudio" "battery" "custom/power"];
 
     "clock" = {
       format = " {:%H:%M}";
       tooltip-format = "<big>{:%A, %d.%B %Y }</big><tt><small>{calendar}</small></tt>";
+    };
+    "custom/power" = {
+      format = "⏻";
+      tooltip = false;
+      on-click = "powermenu";
     };
     "tray" = {
       spacing = 12;
@@ -57,7 +62,7 @@ let
     };
     "custom/menu" = {
       format = "";
-      on-click = "walker";
+      on-click = "rofi-legacy.menu";
     };
     "cpu" = {
       format = " {load}%";
@@ -105,6 +110,7 @@ let
     #pulseaudio,
     #battery,
     #custom-menu,
+    #custom-power,
     #cpu,
     #memory,
     #idle_inhibitor {
@@ -117,6 +123,7 @@ let
     #pulseaudio { color: #${base0D}; }
     #battery { color: #${base08}; }
     #custom-menu { color: #${base0E}; }
+    #custom-power { color: #${base0E}; }
     #cpu { color: #${base0A}; }
     #memory { color: #${base0C}; }
     #idle_inhibitor { color: #${base05}; }

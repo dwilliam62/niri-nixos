@@ -26,9 +26,11 @@ let
   '';
   wfScript = import ./scripts/wf.nix { inherit pkgs; };
   rofiLegacyMenu = import ./scripts/rofi-legacy.menu.nix { inherit pkgs; };
+  powerMenu = import ./scripts/powermenu.nix { inherit pkgs; };
 in
 [
   brightnessScript
   wfScript
   rofiLegacyMenu
+  powerMenu
 ]
