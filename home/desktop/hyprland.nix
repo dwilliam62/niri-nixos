@@ -3,9 +3,7 @@
   pkgs,
   inputs,
   ...
-}:
-
-{
+}: {
   home.packages = with pkgs; [
     inputs.hyprpolkitagent.packages."${pkgs.stdenv.hostPlatform.system}".hyprpolkitagent
   ];
@@ -39,7 +37,7 @@
         "$mainMod, E, exec, $fileManager"
         "$mainMod, T, togglefloating"
         "$mainMod, F, fullscreen"
-        "$mainMod, J, togglesplit"
+        "$mainMod, J, layoutmsg, togglesplit"
         "$mainMod, Q, killactive"
 
         "$mainMod, 1, workspace, 1"
@@ -114,7 +112,7 @@
       animations = {
         enabled = true;
 
-        bezier = [ "myBezier, 0.05, 0.9, 0.1, 1.05" ];
+        bezier = ["myBezier, 0.05, 0.9, 0.1, 1.05"];
         animation = [
           "windows, 1, 7, myBezier"
           "windowsOut, 1, 7, default, popin 80%"
@@ -146,9 +144,9 @@
         #"[workspace 3] discord"
         #"arrpc"
         "waypaper --restore"
-        "swaync" 
+        "swaync"
         #"ironbar"  #still working out the issues
-        #"qs" # Don't Run quickshell breaks waypaper 
+        #"qs" # Don't Run quickshell breaks waypaper
         "waybar -c ~/.config/waybar/config -s ~/.config/waybar/style.css"
       ];
       # Startup ends
@@ -186,7 +184,6 @@
       xwayland = {
         force_zero_scaling = true;
       };
-
     };
   };
   home.file.".config/hypr/xdph.conf".text = ''
