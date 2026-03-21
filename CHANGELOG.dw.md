@@ -14,6 +14,7 @@
 - Set `walker` backend to `cairo` trying to resolve menu exiting
 - Set `SUPER + R` Legacy rofi menu as backup for walker
 - Set Hyprland to 0.54.2 Current main branch refactor isn't working VMs
+- Added package `elephant` for `walker` menu
 
 ### 7-15-25
 

@@ -2,7 +2,10 @@
 
 {
   home.packages = with pkgs; [
-    walker
+    (pkgs.writeShellScriptBin "walker" ''
+      exec env GSK_RENDERER=cairo GDK_BACKEND=wayland ${pkgs.walker}/bin/walker "$@"
+    '')
+    elephant
   ];
   home.file.".config/walker/config.toml".text = ''
     app_launch_prefix = ""

@@ -18,6 +18,7 @@ in {
     ../../home/desktop/hyprlock.nix
     ../../home/desktop/hypridle.nix
     ../../home/desktop/walker.nix
+    ../../home/desktop/rofi-legacy.nix
     ../../home/desktop/waybar-ddubs-2.nix
     ../../home/desktop/ironbar.nix
 
