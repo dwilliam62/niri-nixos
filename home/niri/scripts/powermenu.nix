@@ -1,7 +1,9 @@
 {pkgs}:
 pkgs.writeShellScriptBin "powermenu" ''
   options="lock\nlogout\nreboot\nshutdown"
-  choice="$(printf "%b" "$options" | rofi -dmenu -p "Power")"
+  choice="$(printf "%b" "$options" | rofi -dmenu -p "Power" \
+    -theme-str 'entry { enabled: false; }' \
+    -theme-str 'inputbar { children: [prompt]; }')"
 
   case "$choice" in
     lock)
