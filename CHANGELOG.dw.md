@@ -10,6 +10,7 @@
 - Adjusted nvf language options for the renamed crates setting and list-based format types.
 - Switched package lookups to use pkgs.stdenv.hostPlatform.system where applicable.
 - Removed obsolete apps, neovim, clapgrep, etc
+- Fixed `thunar` plugins eval warnings
 
 ### 7-15-25
 
