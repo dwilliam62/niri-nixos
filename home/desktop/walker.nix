@@ -2,7 +2,8 @@
 
 {
   home.packages = with pkgs; [
-    (pkgs.writeShellScriptBin "walker" ''
+    walker
+    (pkgs.writeShellScriptBin "walker-launch" ''
       exec env GSK_RENDERER=cairo GDK_BACKEND=wayland ${pkgs.walker}/bin/walker "$@"
     '')
     elephant

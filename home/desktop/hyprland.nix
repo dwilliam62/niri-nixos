@@ -20,7 +20,7 @@
       "$mainMod" = "SUPER";
       "$terminal" = "ghostty";
       "$browser" = "google-chrome-stable";
-      "$menu" = "env GSK_RENDERER=cairo walker";
+      "$menu" = "walker-launch";
       "$fileManager" = "thunar";
 
       # Keybinds Start
