@@ -1,20 +1,19 @@
 {pkgs}:
 pkgs.writeShellScriptBin "powermenu" ''
-  options="lock\nlogout\nreboot\nshutdown"
+  options="  lock\n  logout\n  reboot\n  shutdown"
   choice="$(printf "%b" "$options" | rofi -dmenu -p " " -no-custom \
     -theme-str 'entry { enabled: false; }' \
     -theme-str 'prompt { enabled: false; }' \
     -theme-str 'inputbar { children: []; enabled: false; }' \
-    -theme-str 'listview { lines: 4; fixed-height: true; spacing: 8px; columns: 1; fixed-columns: true; }' \
+    -theme-str 'listview { lines: 4; fixed-height: true; spacing: 8px; }' \
     -theme-str 'element { padding: 8px 0; }' \
-    -theme-str 'element-text { horizontal-align: 0.5; text-align: center; }' \
     -theme-str 'window { width: 360px; }')"
 
   case "$choice" in
-    lock)
+    \ \ lock)
       loginctl lock-session
       ;;
-    logout)
+    \ \ logout)
       if command -v niri-msg >/dev/null 2>&1; then
         niri-msg exit || true
       fi
@@ -29,10 +28,10 @@ pkgs.writeShellScriptBin "powermenu" ''
       pkill -f niri-session 2>/dev/null || true
       pkill -x niri 2>/dev/null || true
       ;;
-    reboot)
+    \ \ reboot)
       systemctl reboot
       ;;
-    shutdown)
+    \ \ shutdown)
       systemctl poweroff
       ;;
     *)
