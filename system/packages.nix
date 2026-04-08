@@ -72,7 +72,7 @@
     mesa
     nh
     nitch
-    nodePackages.prettier
+    prettier
     pavucontrol
     pulseaudio
     playerctl
