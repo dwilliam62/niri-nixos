@@ -79,7 +79,7 @@
     pywal16
     pywalfox-native
     ripgrep
-    swww
+    awww
     swaybg
     spicetify-cli
     xwayland

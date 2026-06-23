@@ -31,24 +31,15 @@
         };
       };
 
-      maps = {
-        normal = {
-          "<leader>e" = {
-            action = "<CMD>Neotree toggle<CR>";
-            silent = false;
-          };
-        };
-      };
-
-      diagnostics = {
-        enable = true;
-        config = {
-          virtual_lines.enable = true;
-          underline = true;
-        };
-      };
-
+      # The modern keymaps list syntax handles all mappings natively now
       keymaps = [
+        {
+          key = "<leader>e";
+          mode = ["n"];
+          action = "<CMD>Neotree toggle<CR>";
+          silent = false;
+          desc = "Toggle Neo-tree";
+        }
         {
           key = "jk";
           mode = ["i"];
@@ -158,7 +149,7 @@
         zig.enable = true;
         python.enable = true;
         markdown.enable = true;
-        ts = {
+        typescript = {
           enable = true;
           lsp.enable = true;
           format.type = ["prettierd"];
